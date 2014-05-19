@@ -65,19 +65,19 @@
 	<cfargument name="coreName" type="string" required="true" hint="Solr core name" />
     
     <cfscript>
-		h = new http();
-		h.setMethod("get");
-		h.setURL("#THIS.solrURL#/#ARGUMENTS.coreName#/admin/ping");
-		pingResponse = h.send().getPrefix().statusCode;
-		coreCheckResponse = structNew();
-		if (pingResponse eq "200 OK"){
-			coreCheckResponse.success = true;
-			coreCheckResponse.statusCode = pingResponse;
-			return coreCheckResponse;
+		var coreRequest = new http();
+		LOCAL.coreRequest.setMethod("get");
+		LOCAL.coreRequest.setURL("#THIS.solrURL#/#ARGUMENTS.coreName#/admin/ping");
+		var pingResponse = LOCAL.coreRequest.send().getPrefix().statusCode;
+		var coreCheckResponse = structNew();
+		if (LOCAL.pingResponse eq "200 OK"){
+			LOCAL.coreCheckResponse.success = true;
+			LOCAL.coreCheckResponse.statusCode = LOCAL.pingResponse;
+			return LOCAL.coreCheckResponse;
 		}else{
-			coreCheckResponse.success = false;
-			coreCheckResponse.statusCode = pingResponse;
-			return coreCheckResponse;
+			LOCAL.coreCheckResponse.success = false;
+			LOCAL.coreCheckResponse.statusCode = LOCAL.pingResponse;
+			return LOCAL.coreCheckResponse;
 		}
 	</cfscript>
 </cffunction>
@@ -85,33 +85,30 @@
 <cffunction name="createNewCore" access="public" output="false" hint="Multicore method. Creates new Solr core" returntype="struct">
 	<cfargument name="coreName" type="string" required="true" hint="New Solr core name" />
     <cfargument name="instanceDir" type="string" required="true" hint="Location of folder containing config and schema files" />
-    <cfargument name="dataDir" type="string" required="false" hint="Location to store core's index data" />
+    <cfargument name="dataDir" type="string" required="true" hint="Required in Solr 4.6. Location to store core's index data" />
     <cfargument name="configName" type="string" required="false" hint="Name of config file" />
     <cfargument name="schemaName" type="string" required="false" hint="Name of schema file" />
     
     <cfscript>
-		URLString = "#THIS.host#:#THIS.port#/solr/admin/cores?action=CREATE&name=#ARGUMENTS.coreName#&instanceDir=#instanceDir#";
-		if (structKeyExists(ARGUMENTS, "dataDir")){
-			URLString = "#URLString#&dataDir=#ARGUMENTS.dataDir#";
-		}
+		var URLString = "#THIS.host#:#THIS.port#/solr/admin/cores?action=CREATE&name=#ARGUMENTS.coreName#&instanceDir=#ARGUMENTS.instanceDir#&dataDir=#ARGUMENTS.dataDir#";
 		if (structKeyExists(ARGUMENTS, "configName")){
-			URLString = "#URLString#&config=#ARGUMENTS.configName#";
+			LOCAL.URLString = "#LOCAL.URLString#&config=#ARGUMENTS.configName#";
 		}
 		if (structKeyExists(ARGUMENTS, "schemaName")){
-			URLString = "#URLString#&schema=#ARGUMENTS.schemaName#";
+			LOCAL.URLString = "#LOCAL.URLString#&schema=#ARGUMENTS.schemaName#";
 		}
-		newCoreRequest = new http();
-		newCoreRequest.setMethod("get");
-		newCoreRequest.setURL("#URLString#");
-		response = newCoreRequest.send().getPrefix();
-		coreCreationResponse = structNew();
-		if (response.statusCode eq "200 OK"){
-			coreCreationResponse.success = true;
-			return coreCreationResponse;
+		var newCoreRequest = new http();
+		LOCAL.newCoreRequest.setMethod("get");
+		LOCAL.newCoreRequest.setURL("#URLString#");
+		var response = LOCAL.newCoreRequest.send().getPrefix();
+		var coreCreationResponse = structNew();
+		if (LOCAL.response.statusCode eq "200 OK"){
+			LOCAL.coreCreationResponse.success = true;
+			return LOCAL.coreCreationResponse;
 		}else{
-			coreCreationResponse.success = false;
-			coreCreationResponse.message = response.ErrorDetail;
-			return coreCreationResponse;
+			LOCAL.coreCreationResponse.success = false;
+			LOCAL.coreCreationResponse.message = LOCAL.response.ErrorDetail;
+			return LOCAL.coreCreationResponse;
 		}
 	</cfscript>
 </cffunction>
@@ -136,106 +133,108 @@
 	<cfset var iSuggestion = "" />
 
 	<cfif NOT arrayIsEmpty(ARGUMENTS.facetFields)>
-		<cfset thisQuery.setFacet(true)>
-		<cfset thisQuery.addFacetField(javaCast("string[]",facetFields))>
-		<cfset thisQuery.setFacetMinCount(ARGUMENTS.facetMinCount)>
+		<cfset LOCAL.thisQuery.setFacet(true)>
+		<cfset LOCAL.thisQuery.addFacetField(javaCast("string[]",ARGUMENTS.facetFields))>
+		<cfset LOCAL.thisQuery.setFacetMinCount(ARGUMENTS.facetMinCount)>
 	</cfif>
 
 	<cfif NOT arrayIsEmpty(ARGUMENTS.facetFilters)>
-		<cfset thisQuery.addFilterQuery(javaCast("string[]",ARGUMENTS.facetFilters))>
+		<cfset LOCAL.thisQuery.addFilterQuery(javaCast("string[]",ARGUMENTS.facetFilters))>
 	</cfif>
 	
 	<cfloop list="#structKeyList(ARGUMENTS.params)#" index="thisKey">
 		<cfif isArray(ARGUMENTS.params[thisKey])>
-			<cfset thisQuery.setParam(thisKey,javaCast("string[]",ARGUMENTS.params[thisKey])) />
+			<cfset LOCAL.thisQuery.setParam(thisKey,javaCast("string[]",ARGUMENTS.params[thisKey])) />
 		<cfelseif isBoolean(ARGUMENTS.params[thisKey]) AND NOT isNumeric(ARGUMENTS.params[thisKey])>
-			<cfset thisQuery.setParam(thisKey,ARGUMENTS.params[thisKey]) />
+			<cfset LOCAL.thisQuery.setParam(thisKey,ARGUMENTS.params[thisKey]) />
 		<cfelse>
-			<cfset tempArray = arrayNew(1) />
-			<cfset arrayAppend(tempArray,ARGUMENTS.params[thisKey]) />
-			<cfset thisQuery.setParam(thisKey,javaCast("string[]",tempArray)) />
+			<cfset var tempArray = arrayNew(1) />
+			<cfset arrayAppend(LOCAL.tempArray,ARGUMENTS.params[thisKey]) />
+			<cfset LOCAL.thisQuery.setParam(thisKey,javaCast("string[]",LOCAL.tempArray)) />
 		</cfif>
 	</cfloop>
 	
 	<!--- we do this instead of making the user call java functions, to work around a CF bug --->
-	<cfset response = THIS.solrQueryServer.query(thisQuery) />
-    <cfset ret.results = response.getResults() / >
-	<cfset ret.totalResults = response.getResults().getNumFound() / >
-    <cfset ret.qTime = response.getQTime() />
+	<cfset var response = THIS.solrQueryServer.query(LOCAL.thisQuery) />
+	<cfset var ret = structNew() />
+    <cfset LOCAL.ret.results = LOCAL.response.getResults() / >
+	<cfset LOCAL.ret.totalResults = LOCAL.response.getResults().getNumFound() / >
+    <cfset LOCAL.ret.qTime = LOCAL.response.getQTime() />
 	
 	<!--- Spellchecker Response --->
-	<cfif NOT isNull(response.getSpellCheckResponse())>
-		<cfset suggestions = response.getSpellCheckResponse().getSuggestions() />
-		<cfset ret.collatedSuggestion = response.getSpellCheckResponse().getCollatedResult() />
-		<cfset ret.spellCheck = arrayNew(1) />
-		<cfloop array="#suggestions#" index="iSuggestion">
-			<cfset thisSuggestion = structNew() />
-			<cfset thisSuggestion.token = iSuggestion.getToken() />
-			<cfset thisSuggestion.startOffset = iSuggestion.getStartOffset() />
-			<cfset thisSuggestion.endOffset = iSuggestion.getEndOffset() />
-			<cfset thisSuggestion.suggestions = arrayNew(1) />
+	<cfif NOT isNull(LOCAL.response.getSpellCheckResponse())>
+		<cfset var suggestions = LOCAL.response.getSpellCheckResponse().getSuggestions() />
+		<cfset LOCAL.ret.collatedSuggestion = LOCAL.response.getSpellCheckResponse().getCollatedResult() />
+		<cfset LOCAL.ret.spellCheck = arrayNew(1) />
+		<cfloop array="#LOCAL.suggestions#" index="iSuggestion">
+			<cfset var thisSuggestion = structNew() />
+			<cfset LOCAL.thisSuggestion.token = iSuggestion.getToken() />
+			<cfset LOCAL.thisSuggestion.startOffset = iSuggestion.getStartOffset() />
+			<cfset LOCAL.thisSuggestion.endOffset = iSuggestion.getEndOffset() />
+			<cfset LOCAL.thisSuggestion.suggestions = arrayNew(1) />
 			<cfloop array="#iSuggestion.getSuggestions()#" index="iSuggestion">
-				<cfset arrayAppend(thisSuggestion.suggestions,iSuggestion) />
+				<cfset arrayAppend(LOCAL.thisSuggestion.suggestions,iSuggestion) />
 			</cfloop>
-			<cfset arrayAppend(ret.spellCheck,thisSuggestion) />
+			<cfset arrayAppend(LOCAL.ret.spellCheck,LOCAL.thisSuggestion) />
 		</cfloop>
 	</cfif>
     
 	<!--- Highlighting Response --->
-	<cfif NOT isNull(response.getHighlighting()) AND structKeyExists(ARGUMENTS,"highlightingField")>
-    	<cfloop array="#ret.results#" index="currentResult">
-        	<cfset currentResult.highlightingResult = response.getHighlighting().get("#currentResult.get('id')#").get("#ARGUMENTS.highlightingField#") />
+	<cfif NOT isNull(LOCAL.response.getHighlighting()) AND structKeyExists(ARGUMENTS,"highlightingField")>
+    	<cfloop array="#LOCAL.ret.results#" index="currentResult">
+        	<cfset currentResult.highlightingResult = LOCAL.response.getHighlighting().get("#currentResult.get('id')#").get("#ARGUMENTS.highlightingField#") />
         </cfloop>
     </cfif>
 
-    <cfif NOT isNull(response.getFacetFields())>
-		<cfset ret.facetFields = arrayNew(1)>
-		<cfset ret.facetFields = response.getFacetFields()>
+    <!--- Faceting Response --->
+    <cfif NOT isNull(LOCAL.response.getFacetFields())>
+		<cfset LOCAL.ret.facetFields = arrayNew(1)>
+		<cfset LOCAL.ret.facetFields = LOCAL.response.getFacetFields()>
 	</cfif>
-    <cfreturn duplicate(ret) /> <!--- duplicate clears out the case-sensitive structure --->
+    <cfreturn duplicate(LOCAL.ret) /> <!--- duplicate clears out the case-sensitive structure --->
 </cffunction>
 
-<cffunction name="getAutoSuggestResults" access="remote" returntype="any" output="false">
+<cffunction name="getAutoSuggestResults" access="remote" returntype="any" output="false" hint="Gets suggester results for provided search term.">
     <cfargument name="term" type="string" required="no">
         <cfif Len(trim(ARGUMENTS.term)) gt 0>
         	<!--- Remove any leading spaces in the search term --->
 			<cfset ARGUMENTS.term = "#trim(ARGUMENTS.term)#">
 			<cfscript>
-                h = new http();
-                h.setMethod("get");
-                h.setURL("#THIS.solrURL#/suggest?q=#ARGUMENTS.term#");
-                local.suggestResponse = h.send().getPrefix().Filecontent;
-                if (isXML(local.suggestResponse)){
-					local.XMLResponse = XMLParse(local.suggestResponse);
-					local.wordList = "";
-					if (ArrayLen(XMLResponse.response.lst) gt 1 AND structKeyExists(XMLResponse.response.lst[2].lst, "lst")){
-						local.wordCount = ArrayLen(XMLResponse.response.lst[2].lst.lst);
-						For (j=1;j LTE local.wordCount; j=j+1){
-							if(j eq local.wordCount){
-								local.resultCount = XMLResponse.response.lst[2].lst.lst[j].int[1].XmlText;
-								local.resultList = arrayNew(1);
-								For (i=1;i LTE local.resultCount; i=i+1){
-									arrayAppend(local.resultList, local.wordList & XMLResponse.response.lst[2].lst.lst[j].arr.str[i].XmlText);
+                var suggestionRequest = new http();
+                LOCAL.suggestionRequest.setMethod("get");
+                LOCAL.suggestionRequest.setURL("#THIS.solrURL#/suggest?q=#ARGUMENTS.term#");
+                var suggestResponse = LOCAL.suggestionRequest.send().getPrefix().Filecontent;
+                if (isXML(LOCAL.suggestResponse)){
+					var XMLResponse = XMLParse(LOCAL.suggestResponse);
+					var wordList = "";
+					if (ArrayLen(LOCAL.XMLResponse.response.lst) gt 1 AND structKeyExists(LOCAL.XMLResponse.response.lst[2].lst, "lst")){
+						var wordCount = ArrayLen(LOCAL.XMLResponse.response.lst[2].lst.lst);
+						For (j=1;j LTE LOCAL.wordCount; j=j+1){
+							if(j eq LOCAL.wordCount){
+								var resultCount = XMLResponse.response.lst[2].lst.lst[j].int[1].XmlText;
+								var resultList = arrayNew(1);
+								For (i=1;i LTE LOCAL.resultCount; i=i+1){
+									arrayAppend(LOCAL.resultList, LOCAL.wordList & LOCAL.XMLResponse.response.lst[2].lst.lst[j].arr.str[i].XmlText);
 								}
 							}else{
-								local.wordList = local.wordList & XMLResponse.response.lst[2].lst.lst[j].XMLAttributes.name & " ";
+								LOCAL.wordList = LOCAL.wordList & LOCAL.XMLResponse.response.lst[2].lst.lst[j].XMLAttributes.name & " ";
 							}
 						}
 						//sort results aphabetically
-						if (ArrayLen(local.resultList)){
-							ArraySort(local.resultList,"textnocase","asc");
+						if (ArrayLen(LOCAL.resultList)){
+							ArraySort(LOCAL.resultList,"textnocase","asc");
 						}
 					}else{
-						local.resultList = "";
+						LOCAL.resultList = "";
 					}
                 }else{
-                    local.resultList = "";
+                    LOCAL.resultList = "";
                 }
             </cfscript>
         <cfelse>
-        	<cfset local.resultList = "">
+        	<cfset LOCAL.resultList = "">
         </cfif>
-        <cfreturn local.resultList />
+        <cfreturn LOCAL.resultList />
 </cffunction>
 
 <cffunction name="queryParam" access="public" output="false" returnType="array" hint="Creates a name/value pair and appends it to the array. This is a helper method for adding to your index.">
@@ -244,10 +243,10 @@
 	<cfargument name="value" required="true" type="any" hint="Value of your field." />
 	
 	<cfset var thisField = structNew() />
-	<cfset thisField.name = ARGUMENTS.name />
-	<cfset thisField.value = ARGUMENTS.value />
+	<cfset LOCAL.thisField.name = ARGUMENTS.name />
+	<cfset LOCAL.thisField.value = ARGUMENTS.value />
 	
-	<cfset arrayAppend(ARGUMENTS.paramArray,thisField) />
+	<cfset arrayAppend(ARGUMENTS.paramArray,LOCAL.thisField) />
 	
 	<cfreturn ARGUMENTS.paramArray />
 </cffunction>
@@ -259,18 +258,18 @@
 	<cfset var thisDoc = THIS.javaLoaderInstance.create("org.apache.solr.common.SolrInputDocument").init() />
 	<cfset var thisParam = "" />
 	<cfif isDefined("ARGUMENTS.docBoost")>
-		<cfset thisDoc.setDocumentBoost(ARGUMENTS.docBoost) />
+		<cfset LOCAL.thisDoc.setDocumentBoost(ARGUMENTS.docBoost) />
 	</cfif>
 	
 	<cfloop array="#ARGUMENTS.doc#" index="thisParam">
 		<cfif isDefined("thisParam.boost")>
-			<cfset thisDoc.addField(thisParam.name,thisParam.value,thisParam.boost) />
+			<cfset LOCAL.thisDoc.addField(thisParam.name,thisParam.value,thisParam.boost) />
 		<cfelse>
-			<cfset thisDoc.addField(thisParam.name,thisParam.value) />
+			<cfset LOCAL.thisDoc.addField(thisParam.name,thisParam.value) />
 		</cfif>
 	</cfloop>
 	
-	<cfreturn THIS.solrUpdateServer.add(thisDoc) />
+	<cfreturn THIS.solrUpdateServer.add(LOCAL.thisDoc) />
 </cffunction>
 
 <cffunction name="addField" access="public" output="false" returnType="array" hint="Creates a field object and appends it to the array. This is a helper method for adding to your index.">
@@ -280,13 +279,13 @@
 	<cfargument name="boost" required="false" type="numeric" hint="An array to add your document field to." />
 	
 	<cfset var thisField = structNew() />
-	<cfset thisField.name = ARGUMENTS.name />
-	<cfset thisField.value = ARGUMENTS.value />
+	<cfset LOCAL.thisField.name = ARGUMENTS.name />
+	<cfset LOCAL.thisField.value = ARGUMENTS.value />
 	<cfif isDefined("ARGUMENTS.boost")>
-		<cfset thisField.boost = ARGUMENTS.boost />
+		<cfset LOCAL.thisField.boost = ARGUMENTS.boost />
 	</cfif>
 	
-	<cfset arrayAppend(ARGUMENTS.documentArray,thisField) />
+	<cfset arrayAppend(ARGUMENTS.documentArray,LOCAL.thisField) />
 	
 	<cfreturn ARGUMENTS.documentArray />
 </cffunction>
@@ -302,28 +301,28 @@
 	<cfargument name="idFieldName" required="false" type="string" default="id" hint="The name of the unique id field in the Solr schema" />
 	<cfset var docRequest = THIS.javaLoaderInstance.create("org.apache.solr.client.solrj.request.ContentStreamUpdateRequest").init("/update/extract") />
     <cfset var thisKey = "" />
-	<cfset docRequest.addFile(createObject("java","java.io.File").init(ARGUMENTS.file),"application/octet-stream") />
-	<cfset docRequest.setParam("literal.#arguments.idFieldName#",ARGUMENTS.id) />
+	<cfset LOCAL.docRequest.addFile(createObject("java","java.io.File").init(ARGUMENTS.file),"application/octet-stream") />
+	<cfset LOCAL.docRequest.setParam("literal.#arguments.idFieldName#",ARGUMENTS.id) />
 	<cfif ARGUMENTS.saveMetadata>
-		<cfset docRequest.setParam("uprefix",metadataPrefix) />
+		<cfset LOCAL.docRequest.setParam("uprefix",metadataPrefix) />
 	</cfif>
 	<cfif isDefined("ARGUMENTS.fmap")>
 		<cfloop list="#structKeyList(ARGUMENTS.fmap)#" index="thisKey">
-			<cfset docRequest.setParam("fmap.#thisKey#",ARGUMENTS.fmap[thisKey]) />
+			<cfset LOCAL.docRequest.setParam("fmap.#thisKey#",ARGUMENTS.fmap[thisKey]) />
 		</cfloop>
 	</cfif>
 	<cfif isDefined("ARGUMENTS.boost")>
 		<cfloop list="#structKeyList(ARGUMENTS.boost)#" index="thisKey">
-			<cfset docRequest.setParam("boost.#thisKey#",ARGUMENTS.boost[thisKey]) />
+			<cfset LOCAL.docRequest.setParam("boost.#thisKey#",ARGUMENTS.boost[thisKey]) />
 		</cfloop>
 	</cfif>
 	<cfif isDefined("ARGUMENTS.literalData")>
 		<cfloop list="#structKeyList(ARGUMENTS.literalData)#" index="thisKey">
-			<cfset docRequest.setParam("literal.#thisKey#",ARGUMENTS.literalData[thisKey]) />
+			<cfset LOCAL.docRequest.setParam("literal.#thisKey#",ARGUMENTS.literalData[thisKey]) />
 		</cfloop>
 	</cfif>
 	
-	<cfreturn THIS.solrUpdateServer.request(docRequest) />
+	<cfreturn THIS.solrUpdateServer.request(LOCAL.docRequest) />
 </cffunction>
 
 <cffunction name="deleteByID" access="public" output="false" hint="Delete a document from the index by ID">
@@ -337,6 +336,38 @@
 	<cfargument name="q" type="string" required="true" hint="Query string to delete objects with.">
 	
 	<cfset THIS.solrUpdateServer.deleteByQuery(ARGUMENTS.q) />
+</cffunction>
+<!--- addFileToSchema for use with managed schema --->
+<cffunction name="addFieldToSchema" access="public" output="false" hint="Adds a new field to the schema using the REST API. Managed schema must be set up in Solr Config to use this method.">
+	<cfargument name="fieldName" type="string" required="true" hint="Name of field to add to the Solr schema." />
+	<cfargument name="fieldParams" type="string" required="true" hint="New field parameters in JSON format." />
+
+	<cfscript>
+		var schemaRequest = new http();
+		LOCAL.schemaRequest.setMethod("put");
+		LOCAL.schemaRequest.setURL("#THIS.host#:#THIS.port#/solr/schema/fields/#ARGUMENTS.fieldName#");
+		LOCAL.schemaRequest.clearParams();
+		LOCAL.schemaRequest.addParam(type="body",name="body",value='#ARGUMENTS.fieldParams#');
+		var response = LOCAL.schemaRequest.send().getPrefix();
+	</cfscript>
+
+	<cfreturn LOCAL.response />
+</cffunction>
+<!--- addCopyFieldToSchema for use with managed schema --->
+<cffunction name="addCopyFieldToSchema" access="public" output="false" hint="Adds copyfiled to Solr schema using REST API. Managed schema must be set up in Solr Config to use this method.">
+	<cfargument name="sourceField" type="string" required="true" hint="Source field to copy from" />
+	<cfargument name="destinationField" type="string" required="true" hint="Destination field to copy to" />
+
+	<cfscript>
+		var schemaRequest = new http();
+		LOCAL.schemaRequest.setMethod("put");
+		LOCAL.schemaRequest.setURL("#THIS.host#:#THIS.port#/solr/schema/copyfields");
+		LOCAL.schemaRequest.clearParams();
+		LOCAL.schemaRequest.addParam(type="body",name="body",value='[{"source":"#ARGUMENTS.sourceField#","dest":"#ARGUMENTS.destinationField#"}]');
+		var response = LOCAL.schemaRequest.send().getPrefix();
+	</cfscript>
+
+	<cfreturn LOCAL.response />
 </cffunction>
 
 <cffunction name="resetIndex" access="public" output="false" hint="Clear out the index.">

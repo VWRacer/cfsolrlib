@@ -5,3 +5,7 @@
 .DS_Store
 solr-server/solr/data/index
 solr-server/solr/collection1/data/tlog/
+solr-server/multicore/core0/data/index/segments.gen
+solr-server/multicore/core0/data/index/segments_1
+solr-server/multicore/core1/data/index/segments.gen
+solr-server/multicore/core1/data/index/segments_1
