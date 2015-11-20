@@ -3,13 +3,13 @@
 <cfif structKeyExists(form,"coreSubmit")>
 	<cfset local.coreResponse = local.sampleSolrInstance.checkForCore("#form.coreName#")/>
     <cfif local.coreResponse.success eq false>
-    	<cfset local.newCoreResponse = local.sampleSolrInstance.createNewCore("#form.coreName#","core0")/>
+    	<cfset local.newCoreResponse = local.sampleSolrInstance.createNewCore("#form.coreName#","collection1","collection1")/>
     </cfif>
 </cfif>
 
 <html>
 	<head>
-		<title>CFSolrLib 3.0 | Core creation example</title>
+		<title>CFSolrLib 4.0 | Core creation example</title>
 	</head>
 	<body>
     	<h2>Create Solr Core Example</h2>

@@ -1,0 +1,142 @@
+2015-11-20 02:00:09.417 INFO  (main) [   ] o.e.j.u.log Logging initialized @2746ms
+2015-11-20 02:00:15.609 INFO  (main) [   ] o.e.j.s.Server jetty-9.2.11.v20150529
+2015-11-20 02:00:15.769 WARN  (main) [   ] o.e.j.s.h.RequestLogHandler !RequestLog
+2015-11-20 02:00:15.771 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/contexts/] at interval 0
+2015-11-20 02:00:19.098 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2015-11-20 02:00:21.160 WARN  (main) [   ] o.e.j.s.SecurityHandler ServletContext@o.e.j.w.WebAppContext@17858a9{/solr,file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/solr-webapp/webapp/,STARTING}{C:\inetpub\wwwroot\cfsolrlib\solr-server\server/solr-webapp/webapp} has uncovered http methods for path: /
+2015-11-20 02:00:22.378 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init(): WebAppClassLoader=27227791@19f768f
+2015-11-20 02:00:22.952 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+2015-11-20 02:00:22.952 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr
+2015-11-20 02:00:22.954 INFO  (main) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: 'C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\'
+2015-11-20 02:00:23.199 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\solr.xml
+2015-11-20 02:00:24.488 INFO  (main) [   ] o.a.s.c.CoresLocator Config-defined core root directory: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr
+2015-11-20 02:00:24.592 INFO  (main) [   ] o.a.s.c.CoreContainer New CoreContainer 17634382
+2015-11-20 02:00:24.592 INFO  (main) [   ] o.a.s.c.CoreContainer Loading cores into CoreContainer [instanceDir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\]
+2015-11-20 02:00:24.592 INFO  (main) [   ] o.a.s.c.CoreContainer loading shared library: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\lib
+2015-11-20 02:00:24.592 WARN  (main) [   ] o.a.s.c.SolrResourceLoader Can't find (or read) directory to add to classloader: lib (resolved as: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\lib).
+2015-11-20 02:00:24.649 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory created with socketTimeout : 600000,connTimeout : 60000,maxConnectionsPerHost : 20,maxConnections : 10000,corePoolSize : 0,maximumPoolSize : 2147483647,maxThreadIdleTime : 5,sizeOfQueue : -1,fairnessPolicy : false,useRetries : false,
+2015-11-20 02:00:24.880 INFO  (main) [   ] o.a.s.u.UpdateShardHandler Creating UpdateShardHandler HTTP client with params: socketTimeout=600000&connTimeout=60000&retry=true
+2015-11-20 02:00:24.882 INFO  (main) [   ] o.a.s.l.LogWatcher SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+2015-11-20 02:00:24.883 INFO  (main) [   ] o.a.s.l.LogWatcher Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+2015-11-20 02:00:24.885 INFO  (main) [   ] o.a.s.c.CoreContainer Security conf doesn't exist. Skipping setup for authorization module.
+2015-11-20 02:00:24.885 INFO  (main) [   ] o.a.s.c.CoreContainer No authentication plugin used.
+2015-11-20 02:00:34.623 INFO  (main) [   ] o.a.s.c.CoresLocator Looking for core definitions underneath C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr
+2015-11-20 02:00:34.694 INFO  (main) [   ] o.a.s.c.CoresLocator Found 0 core definitions
+2015-11-20 02:00:34.696 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter user.dir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server
+2015-11-20 02:00:34.697 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init() done
+2015-11-20 02:00:34.709 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@17858a9{/solr,file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/solr-webapp/webapp/,AVAILABLE}{C:\inetpub\wwwroot\cfsolrlib\solr-server\server/solr-webapp/webapp}
+2015-11-20 02:00:34.912 INFO  (main) [   ] o.e.j.s.ServerConnector Started ServerConnector@e82965{HTTP/1.1}{0.0.0.0:8983}
+2015-11-20 02:00:34.913 INFO  (main) [   ] o.e.j.s.Server Started @28243ms
+2015-11-20 02:00:38.291 INFO  (qtp7543840-20) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=70 
+2015-11-20 02:02:37.248 INFO  (qtp7543840-16) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1447984957108&wt=json} status=0 QTime=134 
+2015-11-20 02:02:37.319 INFO  (qtp7543840-20) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/info/system params={_=1447984957268&wt=json} status=0 QTime=0 
+2015-11-20 02:02:45.142 INFO  (qtp7543840-28) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/cores params={_=1447984965138&wt=json} status=0 QTime=0 
+2015-11-20 03:15:54.075 INFO  (qtp7543840-13) [   ] o.a.s.h.a.CoreAdminHandler core create command schema=schema.xml&shard=&instanceDir=collection1&indexInfo=false&name=collection1&action=CREATE&config=solrconfig.xml&_=1447989354006&dataDir=data&collection=&wt=json
+2015-11-20 03:15:54.568 INFO  (qtp7543840-13) [   ] o.a.s.c.SolrCore Created CoreDescriptor: {name=collection1, config=solrconfig.xml, transient=false, schema=schema.xml, loadOnStartup=true, configSetProperties=configsetprops.json, instanceDir=collection1, absoluteInstDir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\, dataDir=data}
+2015-11-20 03:15:54.568 INFO  (qtp7543840-13) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: 'C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\'
+2015-11-20 03:15:54.910 INFO  (qtp7543840-13) [   ] o.a.s.c.SolrConfig current version of requestparams : -1
+2015-11-20 03:15:55.139 INFO  (qtp7543840-13) [   ] o.a.s.u.SolrIndexConfig IndexWriter infoStream solr logging is enabled
+2015-11-20 03:15:55.157 INFO  (qtp7543840-13) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 5.3.1
+2015-11-20 03:15:55.451 INFO  (qtp7543840-13) [   ] o.a.s.c.Config Loaded SolrConfig: solrconfig.xml
+2015-11-20 03:15:55.575 INFO  (qtp7543840-13) [   ] o.a.s.s.IndexSchema Reading Solr Schema from C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\schema.xml
+2015-11-20 03:15:55.648 INFO  (qtp7543840-13) [   ] o.a.s.s.IndexSchema [collection1] Schema name=example
+2015-11-20 03:15:57.602 INFO  (qtp7543840-13) [   ] o.a.s.s.IndexSchema unique key field: id
+2015-11-20 03:15:58.512 INFO  (qtp7543840-13) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
+2015-11-20 03:15:58.547 INFO  (qtp7543840-13) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
+2015-11-20 03:15:58.552 INFO  (qtp7543840-13) [   ] o.a.s.c.ConfigSetProperties Did not find ConfigSet properties, assuming default properties: Can't find resource 'configsetprops.json' in classpath or 'C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf'
+2015-11-20 03:15:58.553 INFO  (qtp7543840-13) [   ] o.a.s.c.CoreContainer Creating SolrCore 'collection1' using configuration from instancedir C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\
+2015-11-20 03:15:58.554 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore solr.NRTCachingDirectoryFactory
+2015-11-20 03:15:58.726 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore [[collection1] ] Opening new SolrCore at [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\], dataDir=[null]
+2015-11-20 03:15:58.786 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.JmxMonitoredMap No JMX servers found, not exposing Solr information with JMX.
+2015-11-20 03:15:58.813 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.CachingDirectoryFactory return new directory for C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data
+2015-11-20 03:15:58.921 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore New index directory detected: old=null new=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index/
+2015-11-20 03:15:58.957 WARN  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore [collection1] Solr index directory 'C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index' doesn't exist. Creating new index...
+2015-11-20 03:15:59.036 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.CachingDirectoryFactory return new directory for C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index
+2015-11-20 03:15:59.466 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore SolrDeletionPolicy.onCommit: commits: num=1
+	commit{dir=NRTCachingDirectory(SimpleFSDirectory@C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@970a39; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+2015-11-20 03:15:59.467 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore newest commit generation = 1
+2015-11-20 03:15:59.468 INFO  (OldIndexDirectoryCleanupThreadForCore-collection1) [   x:collection1] o.a.s.c.SolrCore Looking for old index directories to cleanup for core collection1 in C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\
+2015-11-20 03:16:00.210 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore no updateRequestProcessorChain defined as default, creating implicit default
+2015-11-20 03:16:00.677 INFO  (qtp7543840-13) [   x:collection1] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2015-11-20 03:16:00.699 INFO  (qtp7543840-13) [   x:collection1] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2015-11-20 03:16:00.699 INFO  (qtp7543840-13) [   x:collection1] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2015-11-20 03:16:00.700 INFO  (qtp7543840-13) [   x:collection1] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2015-11-20 03:16:09.800 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.PluginBag requestHandler : '/analysis/field' created with startup=lazy 
+2015-11-20 03:16:09.801 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.PluginBag requestHandler : '/analysis/document' created with startup=lazy 
+2015-11-20 03:16:09.816 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.PluginBag requestHandler : '/terms' created with startup=lazy 
+2015-11-20 03:16:09.816 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.RequestHandlers Registered paths: /admin/logging,/admin/plugins,/admin/system,/admin/segments,/admin/file,/admin/luke,/update,/terms,/admin/threads,/schema,/query,/replication,/analysis/field,/admin/ping,/update/json/docs,/analysis/document,/select,/admin/mbeans,/update/csv,/get,/update/json,/export,/admin/properties,/config,/debug/dump,/suggest
+2015-11-20 03:16:09.818 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore Using default statsCache cache: org.apache.solr.search.stats.LocalStatsCache
+2015-11-20 03:16:09.877 INFO  (qtp7543840-13) [   x:collection1] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2015-11-20 03:16:09.877 INFO  (qtp7543840-13) [   x:collection1] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2015-11-20 03:16:09.912 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore Hard AutoCommit: if uncommited for 15000ms; 
+2015-11-20 03:16:09.912 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore Soft AutoCommit: disabled
+2015-11-20 03:16:09.919 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(SimpleFSDirectory@C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@970a39; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+2015-11-20 03:16:09.919 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.SolrCore newest commit generation = 1
+2015-11-20 03:16:09.963 INFO  (qtp7543840-13) [   x:collection1] o.a.s.s.SolrIndexSearcher Opening Searcher@1955c97[collection1] main
+2015-11-20 03:16:10.174 INFO  (qtp7543840-13) [   x:collection1] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf
+2015-11-20 03:16:10.174 INFO  (qtp7543840-13) [   x:collection1] o.a.s.r.RestManager Initializing RestManager with initArgs: {storageDir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf}
+2015-11-20 03:16:10.719 INFO  (qtp7543840-13) [   x:collection1] o.a.s.r.ManagedResourceStorage Reading _rest_managed.json using file:dir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf
+2015-11-20 03:16:10.720 INFO  (qtp7543840-13) [   x:collection1] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _rest_managed.json using file:dir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf
+2015-11-20 03:16:10.720 INFO  (qtp7543840-13) [   x:collection1] o.a.s.r.ManagedResource Loaded initArgs {} for /rest/managed
+2015-11-20 03:16:10.720 INFO  (qtp7543840-13) [   x:collection1] o.a.s.r.RestManager Initializing 0 registered ManagedResources
+2015-11-20 03:16:10.848 INFO  (qtp7543840-13) [   x:collection1] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2015-11-20 03:16:10.862 INFO  (qtp7543840-13) [   x:collection1] o.a.s.s.s.Suggester init: {name=suggest,classname=org.apache.solr.spelling.suggest.Suggester,lookupImpl=org.apache.solr.spelling.suggest.tst.TSTLookup,field=content_autosuggest,buildOnCommit=false,storeDir=autosuggest}
+2015-11-20 03:16:10.956 INFO  (qtp7543840-13) [   x:collection1] o.a.s.h.c.SpellCheckComponent No queryConverter defined, using default converter
+2015-11-20 03:16:10.957 INFO  (qtp7543840-13) [   x:collection1] o.a.s.h.ReplicationHandler Commits will be reserved for  10000
+2015-11-20 03:16:10.957 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: suggest
+2015-11-20 03:16:10.958 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.s.s.Suggester reload()
+2015-11-20 03:16:10.958 INFO  (qtp7543840-13) [   x:collection1] o.a.s.u.UpdateLog Looking up max value of version field to seed version buckets
+2015-11-20 03:16:10.958 INFO  (qtp7543840-13) [   x:collection1] o.a.s.u.VersionInfo Refreshing highest value of _version_ for 65536 version buckets from index
+2015-11-20 03:16:10.959 INFO  (qtp7543840-13) [   x:collection1] o.a.s.u.VersionInfo No terms found for _version_, cannot seed version bucket highest value from index
+2015-11-20 03:16:10.959 INFO  (qtp7543840-13) [   x:collection1] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1518326902642704384
+2015-11-20 03:16:10.959 ERROR (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.c.SolrCore Exception in reloading spell check index for spellchecker: suggest
+java.io.FileNotFoundException: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\autosuggest\tst.dat (The system cannot find the file specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.apache.solr.spelling.suggest.Suggester.reload(Suggester.java:182)
+	at org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener.newSearcher(SpellCheckComponent.java:739)
+	at org.apache.solr.core.SolrCore$5.call(SolrCore.java:1835)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor$1.run(ExecutorUtil.java:210)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2015-11-20 03:16:10.961 INFO  (qtp7543840-13) [   x:collection1] o.a.s.u.UpdateLog Took 3 ms to seed version buckets with highest version 1518326902642704384
+2015-11-20 03:16:11.034 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.c.SolrCore [collection1] Registered new searcher Searcher@1955c97[collection1] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2015-11-20 03:16:11.035 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.CoreContainer registering core: collection1
+2015-11-20 03:16:11.088 INFO  (qtp7543840-13) [   x:collection1] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/cores params={schema=schema.xml&shard=&instanceDir=collection1&indexInfo=false&name=collection1&action=CREATE&config=solrconfig.xml&_=1447989354006&collection=&dataDir=data&wt=json} status=0 QTime=17016 
+2015-11-20 03:16:11.105 INFO  (qtp7543840-17) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/cores params={_=1447989371097&wt=json} status=0 QTime=2 
+2015-11-20 03:16:11.472 INFO  (qtp7543840-31) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/cores params={_=1447989371467&wt=json} status=0 QTime=1 
+2015-11-20 03:16:17.385 ERROR (qtp7543840-17) [   x:collection1] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-bottom.html [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\admin-extra.menu-bottom.html]
+2015-11-20 03:16:17.385 ERROR (qtp7543840-16) [   x:collection1] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-top.html [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\admin-extra.menu-top.html]
+2015-11-20 03:16:17.385 INFO  (qtp7543840-17) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/file params={file=admin-extra.menu-bottom.html&_=1447989377324&contentType=text/html;charset%3Dutf-8} status=404 QTime=52 
+2015-11-20 03:16:17.386 INFO  (qtp7543840-16) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/file params={file=admin-extra.menu-top.html&_=1447989377324&contentType=text/html;charset%3Dutf-8} status=404 QTime=52 
+2015-11-20 03:16:17.427 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/system params={_=1447989377423&wt=json} status=0 QTime=0 
+2015-11-20 03:16:17.442 ERROR (qtp7543840-39) [   x:collection1] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.html [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\admin-extra.html]
+2015-11-20 03:16:17.442 INFO  (qtp7543840-39) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/file params={file=admin-extra.html&_=1447989377424} status=404 QTime=0 
+2015-11-20 03:16:17.462 INFO  (qtp7543840-37) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/replication params={command=details&_=1447989377422&wt=json} status=0 QTime=35 
+2015-11-20 03:16:17.462 INFO  (qtp7543840-20) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1447989377419&show=index&wt=json} status=0 QTime=37 
+2015-11-20 03:16:17.500 INFO  (qtp7543840-13) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/ping params={action=status&_=1447989377425&wt=json} status=503 QTime=7 
+2015-11-20 03:16:20.728 INFO  (qtp7543840-17) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1447989380720&wt=json} status=0 QTime=1 
+2015-11-20 03:16:20.744 INFO  (qtp7543840-39) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/luke params={_=1447989380736&show=schema&wt=json} status=0 QTime=2 
+2015-11-20 03:17:05.544 INFO  (qtp7543840-39) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1447989425497&show=index&wt=json} status=0 QTime=0 
+2015-11-20 03:17:05.546 INFO  (qtp7543840-38) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/ping params={action=status&_=1447989425500&wt=json} status=503 QTime=0 
+2015-11-20 03:17:05.547 ERROR (qtp7543840-17) [   x:collection1] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.html [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\admin-extra.html]
+2015-11-20 03:17:05.547 INFO  (qtp7543840-37) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/system params={_=1447989425499&wt=json} status=0 QTime=2 
+2015-11-20 03:17:05.547 INFO  (qtp7543840-17) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/file params={file=admin-extra.html&_=1447989425499} status=404 QTime=0 
+2015-11-20 03:17:05.549 INFO  (qtp7543840-16) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/replication params={command=details&_=1447989425498&wt=json} status=0 QTime=5 
+2015-11-20 03:22:49.198 INFO  (ShutdownMonitor) [   ] o.e.j.s.ServerConnector Stopped ServerConnector@e82965{HTTP/1.1}{0.0.0.0:8983}
+2015-11-20 03:22:49.202 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=17634382
+2015-11-20 03:22:49.205 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.SolrCore [collection1]  CLOSING SolrCore org.apache.solr.core.SolrCore@ca0069
+2015-11-20 03:22:49.244 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.u.UpdateHandler closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=0,transaction_logs_total_number=0}
+2015-11-20 03:22:49.245 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.u.SolrCoreState Closing SolrCoreState
+2015-11-20 03:22:49.245 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+2015-11-20 03:22:49.245 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+2015-11-20 03:22:49.283 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.SolrCore [collection1] Closing main searcher on request.
+2015-11-20 03:22:49.285 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+2015-11-20 03:22:49.325 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory looking to close C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index [CachedDir<<refCount=0;path=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index;done=false>>]
+2015-11-20 03:22:49.326 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory Closing directory: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index
+2015-11-20 03:22:49.326 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory looking to close C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data [CachedDir<<refCount=0;path=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data;done=false>>]
+2015-11-20 03:22:49.326 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory Closing directory: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data
+2015-11-20 03:22:49.334 INFO  (ShutdownMonitor) [   x:collection1] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@17858a9{/solr,file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/solr-webapp/webapp/,UNAVAILABLE}{C:\inetpub\wwwroot\cfsolrlib\solr-server\server/solr-webapp/webapp}

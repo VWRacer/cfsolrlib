@@ -1,0 +1,33 @@
+0    INFO  (main) [   ] o.e.j.u.log Logging initialized @412ms
+329  INFO  (main) [   ] o.e.j.s.Server jetty-9.2.11.v20150529
+364  WARN  (main) [   ] o.e.j.s.h.RequestLogHandler !RequestLog
+365  INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/contexts/] at interval 0
+1142 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+1552 WARN  (main) [   ] o.e.j.s.SecurityHandler ServletContext@o.e.j.w.WebAppContext@99b59c{/solr,file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/solr-webapp/webapp/,STARTING}{C:\inetpub\wwwroot\cfsolrlib\solr-server\server/solr-webapp/webapp} has uncovered http methods for path: /
+1575 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init(): WebAppClassLoader=30765955@1d57383
+1696 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+1696 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr
+1727 INFO  (main) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: 'C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\'
+1988 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\solr.xml
+2072 INFO  (main) [   ] o.a.s.c.CoresLocator Config-defined core root directory: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr
+2116 INFO  (main) [   ] o.a.s.c.CoreContainer New CoreContainer 21146115
+2116 INFO  (main) [   ] o.a.s.c.CoreContainer Loading cores into CoreContainer [instanceDir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\]
+2116 INFO  (main) [   ] o.a.s.c.CoreContainer loading shared library: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\lib
+2116 WARN  (main) [   ] o.a.s.c.SolrResourceLoader Can't find (or read) directory to add to classloader: lib (resolved as: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\lib).
+2131 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory created with socketTimeout : 600000,connTimeout : 60000,maxConnectionsPerHost : 20,maxConnections : 10000,corePoolSize : 0,maximumPoolSize : 2147483647,maxThreadIdleTime : 5,sizeOfQueue : -1,fairnessPolicy : false,useRetries : false,
+2247 INFO  (main) [   ] o.a.s.u.UpdateShardHandler Creating UpdateShardHandler HTTP client with params: socketTimeout=600000&connTimeout=60000&retry=true
+2249 INFO  (main) [   ] o.a.s.l.LogWatcher SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+2250 INFO  (main) [   ] o.a.s.l.LogWatcher Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+2251 INFO  (main) [   ] o.a.s.c.CoreContainer Security conf doesn't exist. Skipping setup for authorization module.
+2251 INFO  (main) [   ] o.a.s.c.CoreContainer No authentication plugin used.
+11415 INFO  (main) [   ] o.a.s.c.CoresLocator Looking for core definitions underneath C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr
+11496 INFO  (main) [   ] o.a.s.c.CoresLocator Found 0 core definitions
+11499 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter user.dir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server
+11500 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init() done
+11524 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@99b59c{/solr,file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/solr-webapp/webapp/,AVAILABLE}{C:\inetpub\wwwroot\cfsolrlib\solr-server\server/solr-webapp/webapp}
+11551 INFO  (main) [   ] o.e.j.s.ServerConnector Started ServerConnector@37f44d{HTTP/1.1}{0.0.0.0:8983}
+11551 INFO  (main) [   ] o.e.j.s.Server Started @11964ms
+12128 INFO  (qtp1236498-12) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=90 
+730687 INFO  (ShutdownMonitor) [   ] o.e.j.s.ServerConnector Stopped ServerConnector@37f44d{HTTP/1.1}{0.0.0.0:8983}
+730688 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=21146115
+730689 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@99b59c{/solr,file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/solr-webapp/webapp/,UNAVAILABLE}{C:\inetpub\wwwroot\cfsolrlib\solr-server\server/solr-webapp/webapp}

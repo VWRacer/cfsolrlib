@@ -3,6 +3,7 @@
 	THIS.host = "localhost";
 	THIS.port = 8983;
 	THIS.path = "/solr";
+	THIS.coreName = "collection1";
 	THIS.solrURL = "http://#THIS.host#:#THIS.port##THIS.path#";
 	THIS.queueSize = 100;
 	THIS.threadCount = 5;
@@ -22,7 +23,8 @@
 	<cfargument name="username" required="false" type="string" hint="HTTP Basic Authentication Username" />
 	<cfargument name="password" required="false" type="string" hint="HTTP Basic Authentication Password" />
 	<cfargument name="port" required="false" type="numeric" default="8983" hint="Port Solr server is running on" />
-	<cfargument name="path" required="false" type="string" default="/solr" hint="Path to solr instance">
+	<cfargument name="path" required="false" type="string" default="/solr" hint="Path to solr instance" />
+	<cfargument name="coreName" required="false" type="string" default="collection1" hint="Solr core name (required in Solr 5)" />
 	<cfargument name="queueSize" required="false" type="numeric" default="100" hint="The buffer size before the documents are sent to the server">
 	<cfargument name="threadCount" required="false" type="numeric" default="5" hint="The number of background threads used to empty the queue">
 	<cfargument name="binaryEnabled" required="false" type="boolean" default="true" hint="Should we use the faster binary data transfer format?">
@@ -34,6 +36,7 @@
 	<cfset THIS.host = ARGUMENTS.host />
 	<cfset THIS.port = ARGUMENTS.port />
 	<cfset THIS.path = ARGUMENTS.path />
+	<cfset THIS.coreName = ARGUMENTS.coreName />
 	<cfset THIS.solrURL = "http://#THIS.host#:#THIS.port##THIS.path#" />
 	<cfset THIS.queueSize = ARGUMENTS.queueSize />
 	<cfset THIS.threadCount = ARGUMENTS.threadCount />
@@ -41,10 +44,10 @@
 	
 	<cfscript>
 	// create an update server instance
-	THIS.solrUpdateServer = THIS.javaLoaderInstance.create("org.apache.solr.client.solrj.impl.ConcurrentUpdateSolrServer").init(THIS.solrURL,THIS.queueSize,THIS.threadCount);
+	THIS.solrUpdateServer = THIS.javaLoaderInstance.create("org.apache.solr.client.solrj.impl.ConcurrentUpdateSolrServer").init("#THIS.solrURL#/#THIS.coreName#",THIS.queueSize,THIS.threadCount);
 	
 	// create a query server instance
-	THIS.solrQueryServer = THIS.javaLoaderInstance.create("org.apache.solr.client.solrj.impl.HttpSolrServer").init(THIS.solrURL);
+	THIS.solrQueryServer = THIS.javaLoaderInstance.create("org.apache.solr.client.solrj.impl.HttpSolrServer").init("#THIS.solrURL#/#THIS.coreName#");
 	
 	if ( structKeyExists(arguments, "username") ) {
 		THIS.username = arguments.username;
@@ -81,7 +84,7 @@
     <cfscript>
 		var coreRequest = new http();
 		LOCAL.coreRequest.setMethod("get");
-		LOCAL.coreRequest.setURL("#THIS.solrURL#/#ARGUMENTS.coreName#/admin/ping");
+		LOCAL.coreRequest.setURL("#THIS.solrURL#/#THIS.coreName#/admin/ping");
 		var pingResponse = LOCAL.coreRequest.send().getPrefix().statusCode;
 		var coreCheckResponse = structNew();
 		if (LOCAL.pingResponse eq "200 OK"){
@@ -99,7 +102,7 @@
 <cffunction name="createNewCore" access="public" output="false" hint="Multicore method. Creates new Solr core" returntype="struct">
 	<cfargument name="coreName" type="string" required="true" hint="New Solr core name" />
     <cfargument name="instanceDir" type="string" required="true" hint="Location of folder containing config and schema files" />
-    <cfargument name="dataDir" type="string" required="true" hint="Required in Solr 4.6. Location to store core's index data" />
+    <cfargument name="dataDir" type="string" required="true" hint="Required as of Solr 4.6. Location to store core's index data" />
     <cfargument name="configName" type="string" required="false" hint="Name of config file" />
     <cfargument name="schemaName" type="string" required="false" hint="Name of schema file" />
     
@@ -227,7 +230,7 @@
 			<cfscript>
                 var suggestionRequest = new http();
                 LOCAL.suggestionRequest.setMethod("get");
-                LOCAL.suggestionRequest.setURL("#THIS.solrURL#/suggest?q=#ARGUMENTS.term#");
+                LOCAL.suggestionRequest.setURL("#THIS.solrURL#/#THIS.coreName#/suggest?q=#ARGUMENTS.term#");
                 var suggestResponse = LOCAL.suggestionRequest.send().getPrefix().Filecontent;
                 if (isXML(LOCAL.suggestResponse)){
 					var XMLResponse = XMLParse(LOCAL.suggestResponse);

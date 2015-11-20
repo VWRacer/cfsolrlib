@@ -1,0 +1,247 @@
+2015-11-20 04:41:59.954 INFO  (main) [   ] o.e.j.u.log Logging initialized @914ms
+2015-11-20 04:42:00.691 INFO  (main) [   ] o.e.j.s.Server jetty-9.2.11.v20150529
+2015-11-20 04:42:00.709 WARN  (main) [   ] o.e.j.s.h.RequestLogHandler !RequestLog
+2015-11-20 04:42:00.712 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/contexts/] at interval 0
+2015-11-20 04:42:01.822 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2015-11-20 04:42:01.947 WARN  (main) [   ] o.e.j.s.SecurityHandler ServletContext@o.e.j.w.WebAppContext@2535f5{/solr,file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/solr-webapp/webapp/,STARTING}{C:\inetpub\wwwroot\cfsolrlib\solr-server\server/solr-webapp/webapp} has uncovered http methods for path: /
+2015-11-20 04:42:02.083 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init(): WebAppClassLoader=20839332@13dfba4
+2015-11-20 04:42:02.390 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+2015-11-20 04:42:02.391 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr
+2015-11-20 04:42:02.393 INFO  (main) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: 'C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\'
+2015-11-20 04:42:02.907 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\solr.xml
+2015-11-20 04:42:04.029 INFO  (main) [   ] o.a.s.c.CoresLocator Config-defined core root directory: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr
+2015-11-20 04:42:04.246 INFO  (main) [   ] o.a.s.c.CoreContainer New CoreContainer 23687209
+2015-11-20 04:42:04.246 INFO  (main) [   ] o.a.s.c.CoreContainer Loading cores into CoreContainer [instanceDir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\]
+2015-11-20 04:42:04.246 INFO  (main) [   ] o.a.s.c.CoreContainer loading shared library: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\lib
+2015-11-20 04:42:04.246 WARN  (main) [   ] o.a.s.c.SolrResourceLoader Can't find (or read) directory to add to classloader: lib (resolved as: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\lib).
+2015-11-20 04:42:04.339 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory created with socketTimeout : 600000,connTimeout : 60000,maxConnectionsPerHost : 20,maxConnections : 10000,corePoolSize : 0,maximumPoolSize : 2147483647,maxThreadIdleTime : 5,sizeOfQueue : -1,fairnessPolicy : false,useRetries : false,
+2015-11-20 04:42:04.528 INFO  (main) [   ] o.a.s.u.UpdateShardHandler Creating UpdateShardHandler HTTP client with params: socketTimeout=600000&connTimeout=60000&retry=true
+2015-11-20 04:42:04.636 INFO  (main) [   ] o.a.s.l.LogWatcher SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+2015-11-20 04:42:04.637 INFO  (main) [   ] o.a.s.l.LogWatcher Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+2015-11-20 04:42:04.661 INFO  (main) [   ] o.a.s.c.CoreContainer Security conf doesn't exist. Skipping setup for authorization module.
+2015-11-20 04:42:04.661 INFO  (main) [   ] o.a.s.c.CoreContainer No authentication plugin used.
+2015-11-20 04:42:14.619 INFO  (main) [   ] o.a.s.c.CoresLocator Looking for core definitions underneath C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr
+2015-11-20 04:42:14.779 INFO  (main) [   ] o.a.s.c.SolrCore Created CoreDescriptor: {name=collection1, config=solrconfig.xml, transient=false, schema=schema.xml, loadOnStartup=true, configSetProperties=configsetprops.json, instanceDir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1, absoluteInstDir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\, dataDir=data}
+2015-11-20 04:42:14.779 INFO  (main) [   ] o.a.s.c.CoresLocator Found core collection1 in C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\
+2015-11-20 04:42:14.850 INFO  (main) [   ] o.a.s.c.CoresLocator Found 1 core definitions
+2015-11-20 04:42:14.857 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: 'C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\'
+2015-11-20 04:42:14.858 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter user.dir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server
+2015-11-20 04:42:14.858 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init() done
+2015-11-20 04:42:14.895 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@2535f5{/solr,file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/solr-webapp/webapp/,AVAILABLE}{C:\inetpub\wwwroot\cfsolrlib\solr-server\server/solr-webapp/webapp}
+2015-11-20 04:42:15.211 INFO  (main) [   ] o.e.j.s.ServerConnector Started ServerConnector@152e00c{HTTP/1.1}{0.0.0.0:8983}
+2015-11-20 04:42:15.212 INFO  (main) [   ] o.e.j.s.Server Started @16174ms
+2015-11-20 04:42:15.220 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig current version of requestparams : -1
+2015-11-20 04:42:15.223 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Adding specified lib dirs to ClassLoader
+2015-11-20 04:42:15.225 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
+2015-11-20 04:42:15.226 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
+2015-11-20 04:42:15.226 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/aspectjrt-1.8.0.jar' to classloader
+2015-11-20 04:42:15.226 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
+2015-11-20 04:42:15.226 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
+2015-11-20 04:42:15.227 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
+2015-11-20 04:42:15.227 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/commons-compress-1.8.1.jar' to classloader
+2015-11-20 04:42:15.227 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/fontbox-1.8.8.jar' to classloader
+2015-11-20 04:42:15.227 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/icu4j-54.1.jar' to classloader
+2015-11-20 04:42:15.228 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/isoparser-1.0.2.jar' to classloader
+2015-11-20 04:42:15.228 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/java-libpst-0.8.1.jar' to classloader
+2015-11-20 04:42:15.228 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/jdom-1.0.jar' to classloader
+2015-11-20 04:42:15.228 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/jempbox-1.8.8.jar' to classloader
+2015-11-20 04:42:15.229 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/jmatio-1.0.jar' to classloader
+2015-11-20 04:42:15.229 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
+2015-11-20 04:42:15.229 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
+2015-11-20 04:42:15.229 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/pdfbox-1.8.8.jar' to classloader
+2015-11-20 04:42:15.230 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/poi-3.11.jar' to classloader
+2015-11-20 04:42:15.230 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/poi-ooxml-3.11.jar' to classloader
+2015-11-20 04:42:15.230 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/poi-ooxml-schemas-3.11.jar' to classloader
+2015-11-20 04:42:15.230 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/poi-scratchpad-3.11.jar' to classloader
+2015-11-20 04:42:15.231 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/rome-1.0.jar' to classloader
+2015-11-20 04:42:15.231 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
+2015-11-20 04:42:15.231 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/tika-core-1.7.jar' to classloader
+2015-11-20 04:42:15.231 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/tika-java7-1.7.jar' to classloader
+2015-11-20 04:42:15.231 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/tika-parsers-1.7.jar' to classloader
+2015-11-20 04:42:15.232 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/tika-xmp-1.7.jar' to classloader
+2015-11-20 04:42:15.232 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/vorbis-java-core-0.6.jar' to classloader
+2015-11-20 04:42:15.232 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/vorbis-java-tika-0.6.jar' to classloader
+2015-11-20 04:42:15.232 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
+2015-11-20 04:42:15.232 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/xmlbeans-2.6.0.jar' to classloader
+2015-11-20 04:42:15.233 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/xmpcore-5.1.2.jar' to classloader
+2015-11-20 04:42:15.233 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/extraction/lib/xz-1.5.jar' to classloader
+2015-11-20 04:42:15.235 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/dist/solr-cell-5.3.1.jar' to classloader
+2015-11-20 04:42:15.236 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/clustering/lib/attributes-binder-1.2.1.jar' to classloader
+2015-11-20 04:42:15.236 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/clustering/lib/carrot2-mini-3.9.0.jar' to classloader
+2015-11-20 04:42:15.237 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/clustering/lib/hppc-0.5.2.jar' to classloader
+2015-11-20 04:42:15.237 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/clustering/lib/jackson-core-asl-1.9.13.jar' to classloader
+2015-11-20 04:42:15.237 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/clustering/lib/jackson-mapper-asl-1.9.13.jar' to classloader
+2015-11-20 04:42:15.237 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
+2015-11-20 04:42:15.237 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
+2015-11-20 04:42:15.238 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/clustering/lib/simple-xml-2.7.jar' to classloader
+2015-11-20 04:42:15.239 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/dist/solr-clustering-5.3.1.jar' to classloader
+2015-11-20 04:42:15.240 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
+2015-11-20 04:42:15.241 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
+2015-11-20 04:42:15.242 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/dist/solr-langid-5.3.1.jar' to classloader
+2015-11-20 04:42:15.244 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/velocity/lib/commons-beanutils-1.8.3.jar' to classloader
+2015-11-20 04:42:15.244 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
+2015-11-20 04:42:15.244 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/velocity/lib/velocity-1.7.jar' to classloader
+2015-11-20 04:42:15.244 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
+2015-11-20 04:42:15.246 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader Adding 'file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/dist/solr-velocity-5.3.1.jar' to classloader
+2015-11-20 04:42:15.480 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.u.SolrIndexConfig IndexWriter infoStream solr logging is enabled
+2015-11-20 04:42:15.533 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 5.3.1
+2015-11-20 04:42:16.265 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.Config Loaded SolrConfig: solrconfig.xml
+2015-11-20 04:42:16.342 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema Reading Solr Schema from C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\schema.xml
+2015-11-20 04:42:16.366 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema [collection1] Schema name=example
+2015-11-20 04:42:17.021 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema unique key field: id
+2015-11-20 04:42:17.549 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
+2015-11-20 04:42:17.589 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
+2015-11-20 04:42:17.595 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.ConfigSetProperties Did not find ConfigSet properties, assuming default properties: Can't find resource 'configsetprops.json' in classpath or 'C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf'
+2015-11-20 04:42:17.596 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.CoreContainer Creating SolrCore 'collection1' using configuration from instancedir C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\
+2015-11-20 04:42:17.596 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore solr.NRTCachingDirectoryFactory
+2015-11-20 04:42:17.692 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore [[collection1] ] Opening new SolrCore at [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\], dataDir=[null]
+2015-11-20 04:42:17.694 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.JmxMonitoredMap No JMX servers found, not exposing Solr information with JMX.
+2015-11-20 04:42:17.709 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.CachingDirectoryFactory return new directory for C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data
+2015-11-20 04:42:17.710 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore New index directory detected: old=null new=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index/
+2015-11-20 04:42:17.714 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.CachingDirectoryFactory return new directory for C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index
+2015-11-20 04:42:17.871 INFO  (OldIndexDirectoryCleanupThreadForCore-collection1) [   x:collection1] o.a.s.c.SolrCore Looking for old index directories to cleanup for core collection1 in C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\
+2015-11-20 04:42:18.381 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore no updateRequestProcessorChain defined as default, creating implicit default
+2015-11-20 04:42:18.576 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2015-11-20 04:42:18.578 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2015-11-20 04:42:18.579 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2015-11-20 04:42:18.579 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2015-11-20 04:42:19.941 INFO  (qtp1236498-14) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=74 
+2015-11-20 04:42:27.654 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.PluginBag requestHandler : '/analysis/field' created with startup=lazy 
+2015-11-20 04:42:27.654 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.PluginBag requestHandler : '/analysis/document' created with startup=lazy 
+2015-11-20 04:42:27.657 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.PluginBag requestHandler : '/terms' created with startup=lazy 
+2015-11-20 04:42:27.657 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.PluginBag requestHandler : '/update/extract' created with startup=lazy 
+2015-11-20 04:42:27.658 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.RequestHandlers Registered paths: /admin/logging,/admin/plugins,/admin/system,/admin/segments,/admin/file,/admin/luke,/update,/terms,/admin/threads,/schema,/query,/replication,/analysis/field,/admin/ping,/update/json/docs,/analysis/document,/select,/admin/mbeans,/update/csv,/get,/update/json,/update/extract,/export,/admin/properties,/config,/debug/dump,/suggest
+2015-11-20 04:42:27.661 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore Using default statsCache cache: org.apache.solr.search.stats.LocalStatsCache
+2015-11-20 04:42:27.704 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2015-11-20 04:42:27.704 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2015-11-20 04:42:27.765 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore Hard AutoCommit: if uncommited for 15000ms; 
+2015-11-20 04:42:27.766 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore Soft AutoCommit: disabled
+2015-11-20 04:42:27.944 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(SimpleFSDirectory@C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@109821d; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_e,generation=14}
+2015-11-20 04:42:27.945 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore newest commit generation = 14
+2015-11-20 04:42:28.085 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.s.SolrIndexSearcher Opening Searcher@193b169[collection1] main
+2015-11-20 04:42:28.139 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf
+2015-11-20 04:42:28.139 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.r.RestManager Initializing RestManager with initArgs: {storageDir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf}
+2015-11-20 04:42:28.169 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.r.ManagedResourceStorage Reading _rest_managed.json using file:dir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf
+2015-11-20 04:42:28.170 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _rest_managed.json using file:dir=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf
+2015-11-20 04:42:28.170 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.r.ManagedResource Loaded initArgs {} for /rest/managed
+2015-11-20 04:42:28.171 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.r.RestManager Initializing 0 registered ManagedResources
+2015-11-20 04:42:28.176 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2015-11-20 04:42:28.252 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.s.s.Suggester init: {name=suggest,classname=org.apache.solr.spelling.suggest.Suggester,lookupImpl=org.apache.solr.spelling.suggest.tst.TSTLookup,field=content_autosuggest,buildOnCommit=false,storeDir=autosuggest}
+2015-11-20 04:42:28.255 WARN  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.s.s.Suggester Loading stored lookup data failed
+java.io.FileNotFoundException: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\autosuggest\tst.dat (The system cannot find the file specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.apache.solr.spelling.suggest.Suggester.init(Suggester.java:135)
+	at org.apache.solr.handler.component.SpellCheckComponent.inform(SpellCheckComponent.java:660)
+	at org.apache.solr.core.SolrResourceLoader.inform(SolrResourceLoader.java:619)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:800)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:659)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:723)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:443)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:434)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor$1.run(ExecutorUtil.java:210)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2015-11-20 04:42:28.282 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.c.SpellCheckComponent No queryConverter defined, using default converter
+2015-11-20 04:42:28.289 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.ReplicationHandler Commits will be reserved for  10000
+2015-11-20 04:42:28.290 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: suggest
+2015-11-20 04:42:28.290 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.s.s.Suggester reload()
+2015-11-20 04:42:28.291 ERROR (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.c.SolrCore Exception in reloading spell check index for spellchecker: suggest
+java.io.FileNotFoundException: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\autosuggest\tst.dat (The system cannot find the file specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.apache.solr.spelling.suggest.Suggester.reload(Suggester.java:182)
+	at org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener.newSearcher(SpellCheckComponent.java:739)
+	at org.apache.solr.core.SolrCore$5.call(SolrCore.java:1835)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor$1.run(ExecutorUtil.java:210)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2015-11-20 04:42:28.291 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.UpdateLog Looking up max value of version field to seed version buckets
+2015-11-20 04:42:28.291 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.c.SolrCore [collection1] Registered new searcher Searcher@193b169[collection1] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_e(5.3.1):C2)))}
+2015-11-20 04:42:28.293 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.VersionInfo Refreshing highest value of _version_ for 65536 version buckets from index
+2015-11-20 04:42:28.325 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.VersionInfo Found MAX value 1518331971547168768 from Terms for _version_ in index
+2015-11-20 04:42:28.327 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.UpdateLog Took 36 ms to seed version buckets with highest version 1518331971547168768
+2015-11-20 04:42:28.328 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.CoreContainer registering core: collection1
+2015-11-20 04:43:36.456 INFO  (qtp1236498-16) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1447994616449&wt=json} status=0 QTime=1 
+2015-11-20 04:43:36.485 INFO  (qtp1236498-34) [   ] o.a.s.s.SolrDispatchFilter [admin] webapp=null path=/admin/info/system params={_=1447994616472&wt=json} status=0 QTime=0 
+2015-11-20 04:43:38.565 ERROR (qtp1236498-14) [   x:collection1] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-top.html [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\admin-extra.menu-top.html]
+2015-11-20 04:43:38.565 ERROR (qtp1236498-16) [   x:collection1] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-bottom.html [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\admin-extra.menu-bottom.html]
+2015-11-20 04:43:38.565 INFO  (qtp1236498-14) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/file params={file=admin-extra.menu-top.html&_=1447994618510&contentType=text/html;charset%3Dutf-8} status=404 QTime=2 
+2015-11-20 04:43:38.565 INFO  (qtp1236498-16) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/file params={file=admin-extra.menu-bottom.html&_=1447994618511&contentType=text/html;charset%3Dutf-8} status=404 QTime=1 
+2015-11-20 04:43:38.589 INFO  (qtp1236498-34) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1447994618580&show=index&wt=json} status=0 QTime=2 
+2015-11-20 04:43:38.593 INFO  (qtp1236498-15) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/system params={_=1447994618584&wt=json} status=0 QTime=2 
+2015-11-20 04:43:38.600 INFO  (qtp1236498-18) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/replication params={command=details&_=1447994618583&wt=json} status=0 QTime=11 
+2015-11-20 04:43:38.694 ERROR (qtp1236498-14) [   x:collection1] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.html [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\admin-extra.html]
+2015-11-20 04:43:38.694 INFO  (qtp1236498-14) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/file params={file=admin-extra.html&_=1447994618586} status=404 QTime=0 
+2015-11-20 04:43:38.694 INFO  (qtp1236498-16) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/ping params={action=status&_=1447994618588&wt=json} status=503 QTime=1 
+2015-11-20 04:43:51.832 INFO  (qtp1236498-15) [   x:collection1] o.a.s.s.SolrIndexSearcher Opening Searcher@1766ac3[collection1] realtime
+2015-11-20 04:43:51.833 INFO  (qtp1236498-15) [   x:collection1] o.a.s.u.p.LogUpdateProcessor [collection1] webapp=/solr path=/update params={wt=javabin&version=2} {deleteByQuery=*:* (-1518332416320602112)} 0 2747
+2015-11-20 04:43:51.840 INFO  (qtp1236498-18) [   x:collection1] o.a.s.u.UpdateHandler start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2015-11-20 04:43:52.162 INFO  (qtp1236498-18) [   x:collection1] o.a.s.c.SolrCore SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(SimpleFSDirectory@C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@109821d; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_e,generation=14}
+	commit{dir=NRTCachingDirectory(SimpleFSDirectory@C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@109821d; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_f,generation=15}
+2015-11-20 04:43:52.162 INFO  (qtp1236498-18) [   x:collection1] o.a.s.c.SolrCore newest commit generation = 15
+2015-11-20 04:43:52.406 INFO  (qtp1236498-18) [   x:collection1] o.a.s.s.SolrIndexSearcher Opening Searcher@2e30ea[collection1] main
+2015-11-20 04:43:52.408 INFO  (qtp1236498-18) [   x:collection1] o.a.s.u.UpdateHandler end_commit_flush
+2015-11-20 04:43:52.408 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.c.SolrCore [collection1] Registered new searcher Searcher@2e30ea[collection1] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2015-11-20 04:43:52.417 INFO  (qtp1236498-18) [   x:collection1] o.a.s.u.p.LogUpdateProcessor [collection1] webapp=/solr path=/update params={waitSearcher=true&commit=true&wt=javabin&version=2&softCommit=false} {commit=} 0 577
+2015-11-20 04:43:52.425 INFO  (qtp1236498-19) [   x:collection1] o.a.s.u.UpdateHandler start commit{,optimize=true,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2015-11-20 04:43:52.425 INFO  (qtp1236498-19) [   x:collection1] o.a.s.u.UpdateHandler No uncommitted changes. Skipping IW.commit.
+2015-11-20 04:43:52.426 INFO  (qtp1236498-19) [   x:collection1] o.a.s.c.SolrCore SolrIndexSearcher has not changed - not re-opening: org.apache.solr.search.SolrIndexSearcher
+2015-11-20 04:43:52.426 INFO  (qtp1236498-19) [   x:collection1] o.a.s.u.UpdateHandler end_commit_flush
+2015-11-20 04:43:52.426 INFO  (qtp1236498-19) [   x:collection1] o.a.s.u.p.LogUpdateProcessor [collection1] webapp=/solr path=/update params={optimize=true&waitSearcher=true&maxSegments=1&wt=javabin&version=2} {optimize=} 0 2
+2015-11-20 04:43:53.800 INFO  (qtp1236498-16) [   x:collection1] o.a.s.u.p.LogUpdateProcessor [collection1] webapp=/solr path=/update params={wt=javabin&version=2} {add=[1 (1518332420825284608), 2 (1518332420988862464), 3 (1518332420989911040), 4 (1518332420989911041), 5 (1518332420990959616), 6 (1518332420992008192), 7 (1518332420992008193), 8 (1518332420993056768), 9 (1518332420993056769), 10 (1518332420994105344), ... (55 adds)]} 0 299
+2015-11-20 04:43:54.206 INFO  (qtp1236498-19) [   x:collection1] o.a.s.c.PluginBag Going to create a new requestHandler with {type = requestHandler,name = /update/extract,class = solr.extraction.ExtractingRequestHandler,args = {defaults={fmap.content=text,lowernames=true,uprefix=ignored_,captureAttr=true,fmap.a=links,fmap.div=ignored_,df=text}}} 
+2015-11-20 04:43:54.456 INFO  (qtp1236498-18) [   x:collection1] o.a.s.u.p.LogUpdateProcessor [collection1] webapp=/solr path=/update params={wt=javabin&version=2} {add=[file-1 (1518332421561384960)]} 0 250
+2015-11-20 04:43:58.806 INFO  (qtp1236498-19) [   x:collection1] o.a.s.u.p.LogUpdateProcessor [collection1] webapp=/solr path=/update/extract params={fmap.content=text&fmap.title=title&uprefix=attr_&literal.id=file-2&wt=javabin&version=2} {add=[file-2 (1518332426067116032)]} 0 4600
+2015-11-20 04:43:58.812 INFO  (qtp1236498-15) [   x:collection1] o.a.s.u.UpdateHandler start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2015-11-20 04:44:01.692 INFO  (qtp1236498-15) [   x:collection1] o.a.s.c.SolrCore SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(SimpleFSDirectory@C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@109821d; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_f,generation=15}
+	commit{dir=NRTCachingDirectory(SimpleFSDirectory@C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@109821d; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_g,generation=16}
+2015-11-20 04:44:01.693 INFO  (qtp1236498-15) [   x:collection1] o.a.s.c.SolrCore newest commit generation = 16
+2015-11-20 04:44:01.699 INFO  (qtp1236498-15) [   x:collection1] o.a.s.s.SolrIndexSearcher Opening Searcher@dbb822[collection1] main
+2015-11-20 04:44:01.700 INFO  (qtp1236498-15) [   x:collection1] o.a.s.u.UpdateHandler end_commit_flush
+2015-11-20 04:44:01.700 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.c.SolrCore [collection1] Registered new searcher Searcher@dbb822[collection1] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_f(5.3.1):C57)))}
+2015-11-20 04:44:01.700 INFO  (qtp1236498-15) [   x:collection1] o.a.s.u.p.LogUpdateProcessor [collection1] webapp=/solr path=/update params={waitSearcher=true&commit=true&wt=javabin&version=2&softCommit=false} {commit=} 0 2888
+2015-11-20 04:44:01.707 INFO  (qtp1236498-14) [   x:collection1] o.a.s.u.UpdateHandler start commit{,optimize=true,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2015-11-20 04:44:01.707 INFO  (qtp1236498-14) [   x:collection1] o.a.s.u.UpdateHandler No uncommitted changes. Skipping IW.commit.
+2015-11-20 04:44:01.708 INFO  (qtp1236498-14) [   x:collection1] o.a.s.c.SolrCore SolrIndexSearcher has not changed - not re-opening: org.apache.solr.search.SolrIndexSearcher
+2015-11-20 04:44:01.708 INFO  (qtp1236498-14) [   x:collection1] o.a.s.u.UpdateHandler end_commit_flush
+2015-11-20 04:44:01.708 INFO  (qtp1236498-14) [   x:collection1] o.a.s.u.p.LogUpdateProcessor [collection1] webapp=/solr path=/update params={optimize=true&waitSearcher=true&maxSegments=1&wt=javabin&version=2} {optimize=} 0 1
+2015-11-20 04:44:11.215 INFO  (qtp1236498-14) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1447994651207&show=index&wt=json} status=0 QTime=0 
+2015-11-20 04:44:11.219 INFO  (qtp1236498-19) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/system params={_=1447994651210&wt=json} status=0 QTime=4 
+2015-11-20 04:44:11.221 INFO  (qtp1236498-14) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/ping params={action=status&_=1447994651212&wt=json} status=503 QTime=0 
+2015-11-20 04:44:11.222 ERROR (qtp1236498-18) [   x:collection1] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.html [C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\conf\admin-extra.html]
+2015-11-20 04:44:11.222 INFO  (qtp1236498-18) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/admin/file params={file=admin-extra.html&_=1447994651212} status=404 QTime=1 
+2015-11-20 04:44:11.223 INFO  (qtp1236498-16) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/replication params={command=details&_=1447994651209&wt=json} status=0 QTime=9 
+2015-11-20 04:44:21.991 INFO  (qtp1236498-15) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={fl=text&indent=true&q=*:*&_=1447994661807&wt=json} hits=57 status=0 QTime=177 
+2015-11-20 04:44:44.482 INFO  (qtp1236498-19) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={fl=text&indent=true&q=*:*&_=1447994684475&wt=xml} hits=57 status=0 QTime=0 
+2015-11-20 04:45:21.652 INFO  (qtp1236498-16) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={start=0&q=Oil&wt=javabin&version=2&rows=100} hits=0 status=0 QTime=84 
+2015-11-20 04:45:28.074 INFO  (qtp1236498-19) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={start=0&q=Charcoal&wt=javabin&version=2&rows=100} hits=0 status=0 QTime=1 
+2015-11-20 04:45:30.065 INFO  (qtp1236498-15) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={start=0&q=Media&wt=javabin&version=2&rows=100} hits=0 status=0 QTime=0 
+2015-11-20 04:45:31.113 INFO  (qtp1236498-18) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={start=0&q=Charcoal&wt=javabin&version=2&rows=100} hits=0 status=0 QTime=0 
+2015-11-20 04:45:31.971 INFO  (qtp1236498-19) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={start=0&q=*:*&wt=javabin&version=2&rows=100} hits=57 status=0 QTime=0 
+2015-11-20 04:45:41.865 INFO  (qtp1236498-15) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={indent=true&q=*:*&_=1447994741857&wt=xml} hits=57 status=0 QTime=0 
+2015-11-20 04:46:31.480 INFO  (qtp1236498-19) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={indent=true&q=text:tree&_=1447994791462&wt=xml} hits=1 status=0 QTime=3 
+2015-11-20 04:46:51.543 INFO  (qtp1236498-15) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={start=0&q=tree&wt=javabin&version=2&rows=100} hits=1 status=0 QTime=0 
+2015-11-20 04:46:59.306 INFO  (qtp1236498-18) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={hl.fragsize=20&hl.fragListBuilder=simple&hl.fl=title&hl.fragmentsBuilder=colored&wt=javabin&hl=on&version=2&rows=100&hl.snippets=10&hl.useFastVectorHighlighter=true&start=0&q=tree&hl.usePhraseHighlighter=true&hl.boundaryScanner=default} hits=1 status=0 QTime=387 
+2015-11-20 04:47:03.826 INFO  (qtp1236498-18) [   x:collection1] o.a.s.c.S.Request [collection1] webapp=/solr path=/select params={start=0&q=Charcoal&wt=javabin&version=2&rows=100} hits=0 status=0 QTime=0 
+2015-11-20 04:50:01.799 INFO  (ShutdownMonitor) [   ] o.e.j.s.ServerConnector Stopped ServerConnector@152e00c{HTTP/1.1}{0.0.0.0:8983}
+2015-11-20 04:50:01.799 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=23687209
+2015-11-20 04:50:01.800 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.SolrCore [collection1]  CLOSING SolrCore org.apache.solr.core.SolrCore@15e8b58
+2015-11-20 04:50:02.033 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.u.UpdateHandler closing DirectUpdateHandler2{commits=2,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=2,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=57,cumulative_deletesById=0,cumulative_deletesByQuery=1,cumulative_errors=0,transaction_logs_total_size=610153,transaction_logs_total_number=10}
+2015-11-20 04:50:02.034 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.u.SolrCoreState Closing SolrCoreState
+2015-11-20 04:50:02.034 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+2015-11-20 04:50:02.034 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+2015-11-20 04:50:02.039 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.SolrCore [collection1] Closing main searcher on request.
+2015-11-20 04:50:02.041 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+2015-11-20 04:50:02.218 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory looking to close C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index [CachedDir<<refCount=0;path=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index;done=false>>]
+2015-11-20 04:50:02.218 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory Closing directory: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data\index
+2015-11-20 04:50:02.218 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory looking to close C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data [CachedDir<<refCount=0;path=C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data;done=false>>]
+2015-11-20 04:50:02.218 INFO  (ShutdownMonitor) [   x:collection1] o.a.s.c.CachingDirectoryFactory Closing directory: C:\inetpub\wwwroot\cfsolrlib\solr-server\server\solr\collection1\data
+2015-11-20 04:50:02.465 INFO  (ShutdownMonitor) [   x:collection1] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@2535f5{/solr,file:/C:/inetpub/wwwroot/cfsolrlib/solr-server/server/solr-webapp/webapp/,UNAVAILABLE}{C:\inetpub\wwwroot\cfsolrlib\solr-server\server/solr-webapp/webapp}

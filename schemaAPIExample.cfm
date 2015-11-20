@@ -6,27 +6,28 @@
 	    <cfset REQUEST.schemaResponse = REQUEST.sampleSolrInstance.addFieldToSchema("#form.fieldName#",REQUEST.fieldParams)/>
         <cfset REQUEST.fieldResponseDetail = deserializeJSON(REQUEST.schemaResponse.Filecontent) />
     </cfif>
-    <!---<cfif len(form.copyFieldSource) AND len(form.copyFieldDestination)>
+    <cfif len(form.copyFieldSource) AND len(form.copyFieldDestination)>
         <cfset REQUEST.schemaResponse = REQUEST.sampleSolrInstance.addCopyFieldToSchema("#form.copyFieldSource#","#form.copyFieldDestination#")/>
         <cfset REQUEST.responseDetail = deserializeJSON(REQUEST.schemaResponse.Filecontent) />
-    </cfif>--->
+    </cfif>
 </cfif>
 
 <html>
 	<head>
-		<title>CFSolrLib 3.0 | Schema REST API example</title>
+		<title>CFSolrLib 4.0 | Schema REST API example</title>
 	</head>
 	<body>
     	<h2>Add New Field To Schema Example</h2>
 		<p>This will add a new field to the Solr Schema using the REST API.<br />
-        If the field already exists, it will return a message stating so.</p>
+        If the field already exists, it will return a message stating so.<br />
+        Managed Schemas will need to be enabled in Solr to use this example.</p>
 		<form action="" method="POST">
 			New Field Name: <input name="fieldName" type="text" /><br />
             New Field Type: <input name="fieldType" type="text" /><br />
             <input type="submit" name="schemaSubmit" value="Add Field" /><br /><br>
-            <!---New Copy Field Source: <input name="copyFieldSource" type="text" /><br />
+            New Copy Field Source: <input name="copyFieldSource" type="text" /><br />
             New Copy Field Destination: <input name="copyFieldDestination" type="text" /><br />
-            <input type="submit" name="schemaSubmit" value="Add Copy Field" /><br />--->
+            <input type="submit" name="schemaSubmit" value="Add Copy Field" /><br />
 		</form>
 		<p>
         <cfoutput>
@@ -38,14 +39,14 @@
             	Error Message: #REQUEST.fieldResponseDetail.error.msg#<br />
             </cfif>
         </cfif>
-        <!---<cfif structKeyExists(REQUEST, "copyFieldResponseDetail") > 
+        <cfif structKeyExists(REQUEST, "copyFieldResponseDetail") > 
             <cfif REQUEST.copyFieldResponseDetail.responseHeader.status eq "0">
                 New CopyField Successfully Added To Schema<br />
             <cfelse>
                 New Field Not Added<br />
                 Error Message: #REQUEST.copyFieldResponseDetail.error.msg#<br />
             </cfif>
-        </cfif>--->
+        </cfif>
         <cfset REQUEST.currentFieldNames = new http()/>
         <cfset REQUEST.currentFieldNames.setMethod("GET")/>
         <cfset REQUEST.currentFieldNames.setURL("http://localhost:8983/solr/schema/fields")/>

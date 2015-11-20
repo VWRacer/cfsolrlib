@@ -1,17 +1,19 @@
-<cfset sampleSolrInstance = createObject("component","components.cfsolrlib").init(APPLICATION.javaloader,"localhost","8983","/solr") />
-<html>
+<!doctype html>
 	<head>
-		<title>CFSolrLib 3.0</title>
+	<cfset sampleSolrInstance = createObject("component","components.cfsolrlib").init(APPLICATION.javaloader,"localhost","8983","/solr") />
+
+	
+		<title>CFSolrLib 4.0</title>
 	</head>
 	<body>
 		<h2>Welcome to CFSolrLib</h2>
-		<p>CFSolrLib is a library that lets you interact directly with a Solr server, using the native java client library.</p>
+		<p>CFSolrLib is a library that lets you interact directly with a Solr server, using the native java client library.  Version 4 of the library has been reworked to include support for Solr 5.  It also includes additional methods for managed schemas through the REST API and an example of how to use Solr with Bootstrap Typeahead. </p>
 		
 		<h2>Requirements</h2>
 		<p>
-			You need a few basic things to use CFSolrLib 3:<br/>
+			You need a few basic things to use CFSolrLib 4:<br/>
 			<ul>
-				<li>A Solr server, version 4.0 or greater. This was built &amp; tested with Solr 4.0. This library will not work with earlier versions of Solr.</li>
+				<li>A Solr server, version 5.0 or greater. This was built &amp; tested with Solr 5.3.1. This library will not work with earlier versions of Solr.</li>
 				<li><a href="http://wiki.apache.org/solr/Solrj">SolrJ</a> - The Solr java client library and supporting java libraries.</li>
 				<li>Mark Mandel's <a href="http://www.compoundtheory.com/?action=javaloader.index">JavaLoader</a>, to load SolrJ.</li>
 			</ul>
@@ -34,12 +36,12 @@
 				</ul>
 			<li>solr-server/</li>
 				<ul>
-					<li>A copy of Solr 4.0 "example" directory.</li>
-					<li>solr-server/solr/collection1/conf/schema.xml</li>
+					<li>A copy of Solr 5.0 "example" directory.</li>
+					<li>solr-server/server/solr/collection1/conf/schema.xml</li>
 					<ul>
 						<li>This schema file has been simplified for the examples.</li>
 					</ul>
-					<li>solr-server/solr-webapp/webapp/WEB-INF/lib</li>
+					<li>solr-server/server/solr-webapp/webapp/WEB-INF/lib</li>
 					<ul>
 						<li>This directory is normally created by the Jetty J2EE server using solr.war file. I've added in the necessary Java files to support reading rich documents (Apache Tika/Solr Cell). These libraries can be found in the contrib/dataimporthandler directory in a standard Solr download, and need to be placed in the lib directory of your deployment.</li>
 					</ul>
@@ -49,14 +51,11 @@
 					<li>A collection of the java files needed to run the SolrJ client library. These files are normally located in various places in the solr-server directory, but copied here for convenience.</li>
 				</ul>
 		</ul>
-		<p>In order to start the Solr server, you will need to run a command from the command line, inside the solr-server directory. Make sure you don't have another Solr server running, including the one built-in to CF9. If you are on Linux/OS X, you might need to run the command with sudo.</p>
+		<p>In order to start the Solr server, you will need to run a command from the command line, inside the solr-server/bin/ directory. Make sure you don't have another Solr server running, including the one built-in to CF9 and up. If you are on Linux/OS X, you might need to run the command with sudo.</p>
 		<ul>
-			<li><strong>java -jar start.jar</strong></li>
+			<li><strong>solr start</strong></li>
 		</ul>
-        <p>To start the Solr server in multicore mode, you will need to define the Solr home in the command line by adding an additional parameter.</p>
-        <ul>
-        	<li><strong>java -Dsolr.solr.home=multicore -jar start.jar</strong></li>
-        </ul>
+        <p>Solr used to require additional parameters to operate in multicore mode, but as of Solr 5, Solr always operates in a multicore state.</p>
 		
 		<h2>Examples</h2>
 		<p>There are two basic examples, one for indexing content, and one for searching content. This is not a Solr tutorial, this just shows how to get your data in &amp; out using this CF library.</p>
@@ -64,7 +63,8 @@
 		<ul>
 			<li><a href="indexExample.cfm">Indexing Example</a> (requires the CFArtGallery datasource)</li>
 			<li><a href="searchExample.cfm">Search Example</a></li>
-            <li><a href="autoSuggestExample.cfm">Auto Suggest Example</a> (Shows how to use JQuery Autocomplete with Solr)
+            <li><a href="autoSuggestJQueryUIExample.cfm">JQuery UI Auto Suggest Example</a> (Shows how to use JQuery Autocomplete with Solr)
+            <li><a href="autoSuggestBootstrapExample.cfm">Bootstrap Auto Suggest Example</a> (Shows how to use Bootstrap 2/3 Typeahead with Solr)
             <li><a href="coreCreationExample.cfm">New Core Example</a> (Shows how to create new cores dynamically in multicore mode)
 		</ul>
 		

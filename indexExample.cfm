@@ -1,5 +1,7 @@
 <cfset sampleSolrInstance = createObject("component","components.cfsolrlib").init(APPLICATION.javaloader,"localhost","8983","/solr") />
 
+<cfset sampleSolrInstance.resetIndex() />
+
 <cfquery name="getArt" datasource="cfartgallery">
 	SELECT artID, artname, description, firstName, lastName, isSold
 	FROM art
@@ -49,11 +51,12 @@
 
 <html>
 	<head>
-		<title>CFSolrLib 3.0 | Indexing example</title>
+		<title>CFSolrLib 4.0 | Indexing example</title>
 	</head>
 	<body>
 		<h2>Indexing</h2>
 		
 		<p>Done. There's nothing to output, you'll want to look at the CF source.</p>
+		<p><a href="index.cfm">Return Home</a></p>
 	</body>
 </html>
