@@ -1,9 +1,16 @@
 /solr-server/server/solr/collection1/data/index/
 /solr-server/server/solr/collection1/data/spellcheck/
 /solr-server/server/solr/collection1/data/autosuggest/
+/solr-server/server/logs/
 
 .DS_Store
 /solr-server/server/solr/collection1/core.properties.unloaded
 /solr-server/server/solr/collection1/data/tlog/
 /solr-server/server/solr/collection1/collection1/
 /solr-server/server/solr/hsperfdata_James/
+*.log
+solr-server/bin/solr-8983.port
+solr-server/server/solr/collection1/core.properties
+solr-server/server/logs/solr_gc.log
+solr-server/server/logs/solr-8983-console.log
+solr-server/server/logs/solr_gc.log

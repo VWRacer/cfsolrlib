@@ -1,6 +1,6 @@
 <!doctype html>
 	<head>
-	<cfset sampleSolrInstance = createObject("component","components.cfsolrlib").init(APPLICATION.javaloader,"localhost","8983","/solr") />
+	<cfset REQUEST.sampleSolrInstance = createObject("component","components.cfsolrlib").init(APPLICATION.javaloader,"localhost","8983","/solr") />
 
 	
 		<title>CFSolrLib 4.0</title>
@@ -63,9 +63,10 @@
 		<ul>
 			<li><a href="indexExample.cfm">Indexing Example</a> (requires the CFArtGallery datasource)</li>
 			<li><a href="searchExample.cfm">Search Example</a></li>
-            <li><a href="autoSuggestJQueryUIExample.cfm">JQuery UI Auto Suggest Example</a> (Shows how to use JQuery Autocomplete with Solr)
-            <li><a href="autoSuggestBootstrapExample.cfm">Bootstrap Auto Suggest Example</a> (Shows how to use Bootstrap 2/3 Typeahead with Solr)
-            <li><a href="coreCreationExample.cfm">New Core Example</a> (Shows how to create new cores dynamically in multicore mode)
+			<li><a href="facetExample.cfm">Faceted Search Example</a></li>
+            <li><a href="autoSuggestJQueryUIExample.cfm">JQuery UI Auto Suggest Example</a> (Shows how to use JQuery Autocomplete with Solr)</li>
+            <li><a href="autoSuggestBootstrapExample.cfm">Bootstrap Auto Suggest Example</a> (Shows how to use Bootstrap 2/3 Typeahead with Solr)</li>
+            <li><a href="coreCreationExample.cfm">New Core Example</a> (Shows how to create new cores dynamically in multicore mode)</li>
 		</ul>
 		
 		<p>The point of the examples is the CF code, not the HTML that you'll see in the browser, so be sure to dig in!</p>

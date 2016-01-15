@@ -15,7 +15,6 @@
 <cfelse>
     <cfset searchResponse = sampleSolrInstance.search(URL.q,0,100) />
 </cfif>
-
 <cfoutput>
 <html>
 	<head>
@@ -33,9 +32,9 @@
 		</form>
 		<p>
                 <cfloop array="#searchResponse.results#" index="currentResult">
-                	<strong>ID:</strong> #currentResult.id# <strong>TITLE:</strong> #currentResult.title#<br/>
+                	<strong>ID:</strong> #currentResult['id']# <strong>TITLE:</strong> #currentResult['title']#<br/>
                     <cfif structKeyExists(url,"enableHighlighting")>
-                    	<strong>HIGHLIGHTING:</strong> <cfif structKeyExists(currentResult,"highlightingResult")>#currentResult.highlightingResult[1]#</cfif><br/>
+                    	<strong>HIGHLIGHTING:</strong> <cfif structKeyExists(currentResult,"HIGHLIGHTINGRESULT")>#currentResult['HIGHLIGHTINGRESULT'][1]#</cfif><br/>
                     </cfif>
 				</cfloop>
 		</p>
