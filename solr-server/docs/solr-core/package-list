@@ -10,12 +10,15 @@ org.apache.solr.handler.admin
 org.apache.solr.handler.component
 org.apache.solr.handler.loader
 org.apache.solr.highlight
+org.apache.solr.index
+org.apache.solr.index.hdfs
 org.apache.solr.internal.csv
 org.apache.solr.internal.csv.writer
 org.apache.solr.logging
 org.apache.solr.logging.jul
 org.apache.solr.logging.log4j
 org.apache.solr.parser
+org.apache.solr.query
 org.apache.solr.request
 org.apache.solr.request.json
 org.apache.solr.request.macro

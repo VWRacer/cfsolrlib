@@ -83,7 +83,7 @@ function processAdd(cmd) {
   var type_att = token_stream.getAttribute(get_class("org.apache.lucene.analysis.tokenattributes.TypeAttribute"));
   token_stream.reset();
   while (token_stream.incrementToken()) {
-    doc.addField(type_att.type().replaceAll(/\<|\>/g,"").toLowerCase()+"_ss", term_att.toString());
+    doc.addField(type_att.type().replace(/\<|\>/g,'').toLowerCase()+"_ss", term_att.toString());
   }
   token_stream.end();
   token_stream.close();

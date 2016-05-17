@@ -3,17 +3,17 @@
 	<cfset REQUEST.sampleSolrInstance = createObject("component","components.cfsolrlib").init(APPLICATION.javaloader,"localhost","8983","/solr") />
 
 	
-		<title>CFSolrLib 4.0</title>
+		<title>CFSolrLib 5.0</title>
 	</head>
 	<body>
 		<h2>Welcome to CFSolrLib</h2>
-		<p>CFSolrLib is a library that lets you interact directly with a Solr server, using the native java client library.  Version 4 of the library has been reworked to include support for Solr 5.  It also includes additional methods for managed schemas through the REST API and an example of how to use Solr with Bootstrap Typeahead. </p>
+		<p>CFSolrLib is a library that lets you interact directly with a Solr server, using the native java client library.  Version 5 of the library has been reworked to include support for Solr 6.  It also includes additional methods for managed schemas through the REST API and an example of how to use Solr with Bootstrap Typeahead. </p>
 		
 		<h2>Requirements</h2>
 		<p>
-			You need a few basic things to use CFSolrLib 4:<br/>
+			You need a few basic things to use CFSolrLib 5:<br/>
 			<ul>
-				<li>A Solr server, version 5.0 or greater. This was built &amp; tested with Solr 5.3.1. This library will not work with earlier versions of Solr.</li>
+				<li>A Solr server, version 6.0 or greater. This was built &amp; tested with Solr 6.0.0. This library will not work with earlier versions of Solr.</li>
 				<li><a href="http://wiki.apache.org/solr/Solrj">SolrJ</a> - The Solr java client library and supporting java libraries.</li>
 				<li>Mark Mandel's <a href="http://www.compoundtheory.com/?action=javaloader.index">JavaLoader</a>, to load SolrJ.</li>
 			</ul>
@@ -36,7 +36,7 @@
 				</ul>
 			<li>solr-server/</li>
 				<ul>
-					<li>A copy of Solr 5.0 "example" directory.</li>
+					<li>A copy of Solr 6.0 "example" directory.</li>
 					<li>solr-server/server/solr/collection1/conf/schema.xml</li>
 					<ul>
 						<li>This schema file has been simplified for the examples.</li>
@@ -55,7 +55,7 @@
 		<ul>
 			<li><strong>solr start</strong></li>
 		</ul>
-        <p>Solr used to require additional parameters to operate in multicore mode, but as of Solr 5, Solr always operates in a multicore state.</p>
+        <p>Solr used to require additional parameters to operate in multicore mode, but as of Solr 6, Solr always operates in a multicore state.</p>
 		
 		<h2>Examples</h2>
 		<p>There are two basic examples, one for indexing content, and one for searching content. This is not a Solr tutorial, this just shows how to get your data in &amp; out using this CF library.</p>

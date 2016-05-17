@@ -35,7 +35,7 @@
        that you fully re-index after changing this setting as it can
        affect both how text is indexed and queried.
   -->
-  <luceneMatchVersion>5.0.0</luceneMatchVersion>
+  <luceneMatchVersion>6.0.0</luceneMatchVersion>
 
   <!-- <lib/> directives can be used to instruct Solr to load any Jars
        identified and use them to resolve any "plugins" specified in
@@ -131,28 +131,6 @@
   -->
   <codecFactory class="solr.SchemaCodecFactory"/>
 
-  <!-- To disable dynamic schema REST APIs, use the following for <schemaFactory>:
-  
-       <schemaFactory class="ClassicIndexSchemaFactory"/>
-
-       When ManagedIndexSchemaFactory is specified instead, Solr will load the schema from
-       the resource named in 'managedSchemaResourceName', rather than from schema.xml.
-       Note that the managed schema resource CANNOT be named schema.xml.  If the managed
-       schema does not exist, Solr will create it after reading schema.xml, then rename
-       'schema.xml' to 'schema.xml.bak'. 
-       
-       Do NOT hand edit the managed schema - external modifications will be ignored and
-       overwritten as a result of schema modification REST API calls.
-
-       When ManagedIndexSchemaFactory is specified with mutable = true, schema
-       modification REST API calls will be allowed; otherwise, error responses will be
-       sent back for these requests. 
-  -->
-  <schemaFactory class="ManagedIndexSchemaFactory">
-    <bool name="mutable">true</bool>
-    <str name="managedSchemaResourceName">managed-schema</str>
-  </schemaFactory>
-
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        Index Config - These settings control low-level behavior of indexing
        Most example settings here show the default value, but are commented
@@ -190,23 +168,11 @@
          Even older versions of Lucene used LogDocMergePolicy.
       -->
     <!--
-        <mergePolicy class="org.apache.lucene.index.TieredMergePolicy">
+        <mergePolicyFactory class="solr.TieredMergePolicyFactory">
           <int name="maxMergeAtOnce">10</int>
           <int name="segmentsPerTier">10</int>
-        </mergePolicy>
-      -->
-
-    <!-- Merge Factor
-         The merge factor controls how many segments will get merged at a time.
-         For TieredMergePolicy, mergeFactor is a convenience parameter which
-         will set both MaxMergeAtOnce and SegmentsPerTier at once.
-         For LogByteSizeMergePolicy, mergeFactor decides how many new segments
-         will be allowed before they are merged into one.
-         Default is 10 for both merge policies.
-      -->
-    <!-- 
-    <mergeFactor>10</mergeFactor>
-      -->
+        </mergePolicyFactory>
+     -->
 
     <!-- Expert: Merge Scheduler
          The Merge Scheduler in Lucene controls how merges are
@@ -838,15 +804,8 @@
   </requestHandler>
 
 
-  <requestHandler name="/browse" class="solr.SearchHandler" useParams="query,facets,velocity,browse">
-    <lst name="defaults">
-      <str name="echoParams">explicit</str>
-    </lst>
-
-    <lst name="appends">
-      <str name="fq">{!switch v=$type tag=type case='*:*' case.all='*:*' case.unknown='-doc_type:[* TO *]' default=$type_fq}</str>
-    </lst>
-  </requestHandler>
+  <!--These useParams values are available in params.json-->
+  <requestHandler name="/browse" class="solr.SearchHandler" useParams="query,facets,velocity,browse"/>
 
 
   <initParams path="/update/**,/query,/select,/tvrh,/elevate,/spell,/browse">
@@ -877,37 +836,6 @@
       <str name="lowernames">true</str>
     </lst>
   </requestHandler>
-
-  <!--
-    The export request handler is used to export full sorted result sets.
-    Do not change these defaults.
-  -->
-
-  <requestHandler name="/export" class="solr.SearchHandler">
-    <lst name="invariants">
-      <str name="rq">{!xport}</str>
-      <str name="wt">xsort</str>
-      <str name="distrib">false</str>
-    </lst>
-
-    <arr name="components">
-      <str>query</str>
-    </arr>
-  </requestHandler>
-
-
-  <!--
-  Distributed Stream processing.
-  -->
-
-  <requestHandler name="/stream" class="solr.StreamHandler">
-    <lst name="invariants">
-      <str name="wt">json</str>
-      <str name="distrib">false</str>
-    </lst>
-  </requestHandler>
-
-
 
   <!-- Field Analysis Request Handler
 
@@ -1052,7 +980,7 @@
       <!-- maximum threshold of documents a query term can appear to be considered for correction -->
       <float name="maxQueryFrequency">0.01</float>
       <!-- uncomment this to require suggestions to occur in 1% of the documents
-      	<float name="thresholdTokenFrequency">.01</float>
+        <float name="thresholdTokenFrequency">.01</float>
       -->
     </lst>
 
@@ -1528,7 +1456,7 @@
 
   <!-- Query Parsers
 
-       http://wiki.apache.org/solr/SolrQuerySyntax
+       https://cwiki.apache.org/confluence/display/solr/Query+Syntax+and+Parsing
 
        Multiple QParserPlugins can be registered by name, and then
        used in either the "defType" param for the QueryComponent (used
@@ -1576,11 +1504,5 @@
       EditorialMarkerFactory will do exactly that:
      <transformer name="qecBooster" class="org.apache.solr.response.transform.EditorialMarkerFactory" />
     -->
-
-
-  <!-- Legacy config for the admin interface -->
-  <admin>
-    <defaultQuery>*:*</defaultQuery>
-  </admin>
 
 </config>

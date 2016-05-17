@@ -3,8 +3,12 @@ org.apache.solr.client.solrj.beans
 org.apache.solr.client.solrj.impl
 org.apache.solr.client.solrj.io
 org.apache.solr.client.solrj.io.comp
+org.apache.solr.client.solrj.io.eq
+org.apache.solr.client.solrj.io.ops
+org.apache.solr.client.solrj.io.sql
 org.apache.solr.client.solrj.io.stream
 org.apache.solr.client.solrj.io.stream.expr
+org.apache.solr.client.solrj.io.stream.metrics
 org.apache.solr.client.solrj.request
 org.apache.solr.client.solrj.request.schema
 org.apache.solr.client.solrj.response

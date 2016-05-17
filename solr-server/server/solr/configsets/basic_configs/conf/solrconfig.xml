@@ -35,7 +35,7 @@
        that you fully re-index after changing this setting as it can
        affect both how text is indexed and queried.
   -->
-  <luceneMatchVersion>5.3.1</luceneMatchVersion>
+  <luceneMatchVersion>6.0.0</luceneMatchVersion>
 
   <!-- Data Directory
 
@@ -73,10 +73,11 @@
        are experimental, so if you choose to customize the index format, it's a good
        idea to convert back to the official format e.g. via IndexWriter.addIndexes(IndexReader)
        before upgrading to a newer version to avoid unnecessary reindexing.
+       A "compressionMode" string element can be added to <codecFactory> to choose 
+       between the existing compression modes in the default codec: "BEST_SPEED" (default)
+       or "BEST_COMPRESSION".
   -->
   <codecFactory class="solr.SchemaCodecFactory"/>
-
-  <schemaFactory class="ClassicIndexSchemaFactory"/>
 
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        Index Config - These settings control low-level behavior of indexing
@@ -449,23 +450,6 @@
      </lst>
   </requestHandler>
 
-  <!--
-    The export request handler is used to export full sorted result sets.
-    Do not change these defaults.
-  -->
-  <requestHandler name="/export" class="solr.SearchHandler">
-    <lst name="invariants">
-      <str name="rq">{!xport}</str>
-      <str name="wt">xsort</str>
-      <str name="distrib">false</str>
-    </lst>
-
-    <arr name="components">
-      <str>query</str>
-    </arr>
-  </requestHandler>
-
-
   <initParams path="/update/**,/query,/select,/tvrh,/elevate,/spell">
     <lst name="defaults">
       <str name="df">text</str>
@@ -574,10 +558,5 @@
       <str>terms</str>
     </arr>
   </requestHandler>
-
-  <!-- Legacy config for the admin interface -->
-  <admin>
-    <defaultQuery>*:*</defaultQuery>
-  </admin>
 
 </config>

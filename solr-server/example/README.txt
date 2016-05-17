@@ -38,9 +38,11 @@ After starting a Solr example, direct your Web browser to:
 
   http://localhost:8983/solr/
 
-To add documents to the index, use bin/post.  For example:
+To add documents to the index, use bin/post, for example:
 
      bin/post -c techproducts example/exampledocs/*.xml
+
+(where "techproducts" is the Solr core name)
 
 For more information about this example please read...
 
