@@ -44,10 +44,10 @@
 	
 	<cfscript>
 	// create an update server instance
-	THIS.solrUpdateServer = THIS.javaLoaderInstance.create("org.apache.solr.client.solrj.impl.ConcurrentUpdateSolrServer").init("#THIS.solrURL#/#THIS.coreName#",THIS.queueSize,THIS.threadCount);
+	THIS.solrUpdateServer = THIS.javaLoaderInstance.create("org.apache.solr.client.solrj.impl.ConcurrentUpdateSolrClient").init("#THIS.solrURL#/#THIS.coreName#",THIS.queueSize,THIS.threadCount);
 	
 	// create a query server instance
-	THIS.solrQueryServer = THIS.javaLoaderInstance.create("org.apache.solr.client.solrj.impl.HttpSolrServer").init("#THIS.solrURL#/#THIS.coreName#");
+	THIS.solrQueryServer = THIS.javaLoaderInstance.create("org.apache.solr.client.solrj.impl.HttpSolrClient").init("#THIS.solrURL#/#THIS.coreName#");
 	
 	if ( structKeyExists(arguments, "username") ) {
 		THIS.username = arguments.username;
